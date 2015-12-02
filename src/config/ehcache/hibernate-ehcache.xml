@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="ehcachedemo">
+
+	<defaultCache
+		maxElementsInMemory="1000"
+		eternal="false"
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="3600"
+		overflowToDisk="true"/>
+
+   <cache
+        name="com.bkweb.sys.dict.entity.Dictionary"
+        maxElementsInMemory="1000"
+        eternal="true"
+        overflowToDisk="false"/>
+
+    <!--  <cache
+        name="org.hibernate.cache.UpdateTimestampsCache"
+        maxElementsInMemory="5000"
+        eternal="true"
+        overflowToDisk="true"/> -->
+    
+</ehcache>

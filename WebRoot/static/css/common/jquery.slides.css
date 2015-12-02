@@ -1,0 +1,72 @@
+#slides {
+  display: none;
+  position: relative;
+}
+a.slidesjs-next, a.slidesjs-previous, a.slidesjs-play, a.slidesjs-stop {
+  background-repeat: no-repeat;
+  display: block;
+  width: 90px;
+  height: 120px;
+  overflow: hidden;
+  text-indent: -9999px;
+  position: absolute;
+  z-index: 100;
+  background-color: rgba(169,169,169,0.5);
+  top: 36%;
+  background-position: center center;
+}
+a:hover.slidesjs-next,a:hover.slidesjs-previous {
+  background-color: rgba(134,134,134,0.5);
+}
+a.slidesjs-next {
+  background-image: url(../../img/jquery.slides/right.png);
+  right: 0px;
+}
+a.slidesjs-previous {
+  background-image: url(../../img/jquery.slides/left.png);
+  left: 0px;
+}
+/*这里不希望看见播放按钮*/
+a.slidesjs-play {
+  width: 0px;
+  display: none;
+}
+/*这里不希望看见播放按钮*/
+a.slidesjs-stop {
+  width: 0px;
+  display: none;
+}
+.slidesjs-pagination {
+  list-style: none;
+  position: absolute;
+  margin: 0px auto;
+  bottom: 30px;
+  left: 50%;
+  z-index: 100;
+}
+.slidesjs-pagination li {
+  float: left;
+  margin: 0 1px;
+}
+.slidesjs-pagination li a {
+  display: block;
+  width: 13px;
+  height: 0;
+  padding-top: 13px;
+  background-image: url(../../img/jquery.slides/pagination.png);
+  background-position: 0 0;
+  float: left;
+  overflow: hidden;
+}
+.slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active {
+  background-position: 0 -13px
+}
+.slidesjs-pagination li a:hover {
+  background-position: 0 -26px
+}
+#slides a:link, #slides a:visited {
+  color: #333
+}
+#slides a:hover, #slides a:active {
+  color: #9e2020
+}

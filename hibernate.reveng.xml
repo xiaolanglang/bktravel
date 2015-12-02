@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table name="bk_account" catalog="bkweb" class="com.bkweb.sys.account.entity.BkAccount">
+		<primary-key>
+			<generator class="uuid.hex"></generator>
+		</primary-key>
+	</table>
+	<table name="bk_userinfo" catalog="bkweb" class="com.bkweb.modules.user.entity.BkUser">
+		<primary-key>
+			<generator class="uuid.hex"></generator>
+		</primary-key>
+		<column name="age" type="java.lang.Integer"></column>
+		<column name="birthday" type="java.util.Date"></column>
+		<column name="accountId"></column>
+	</table>
+	<table name="base_city" catalog="itravel" class="com.bkweb.modules.position.entity.City"></table>
+	<table name="base_continent" catalog="itravel" class="com.bkweb.modules.position.entity.Continent"></table>
+	<table name="base_country" catalog="itravel" class="com.bkweb.modules.position.entity.Country"></table>
+	<table name="base_nation" catalog="itravel" class="com.bkweb.modules.position.entity.Nation"></table>
+	<table name="base_province" catalog="itravel" class="com.bkweb.modules.position.entity.Province"></table>
+	<table name="base_place_of_start" catalog="itravel" class="com.bkweb.modules.tourism.entity.StartPlace"></table>
+	<table name="base_scenic_spots" catalog="itravel" class="com.bkweb.modules.attraction.entity.Attraction"></table>
+	<table name="base_travel_type" catalog="itravel" class="com.bkweb.modules.tourism.entity.TourismType"></table>
+	<table name="travel_route_detail" catalog="itravel" class="com.bkweb.modules.tourism.entity.TourismDetail"></table>
+	<table name="travel_route" catalog="itravel" class="com.bkweb.modules.tourism.entity.Tourism"></table>
+	<table name="base_dicionary" catalog="itravel" class="com.bkweb.sys.dict.entity.Dictionary"></table>
+	<table name="travel_img" catalog="itravel" class="com.bkweb.modules.tourism.entity.TourismImg"></table>
+</hibernate-reverse-engineering>

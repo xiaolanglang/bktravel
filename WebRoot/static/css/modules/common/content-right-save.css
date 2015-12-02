@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/*
+IMPORT
+...................mixin.scss;函数集中文件
+...................variable.scss;变量集中文件
+...................tag.scss;标签集中文件
+...................raster.scss;栅格集中文件
+
+*/
+.contents .search:before, .contents .search:after,
+.contents .saveform:before, .contents .saveform:after { display: table; content: ""; clear: both; }
+
+html, body, .content { width: 100%; height: 100%; font-size: 13px;}
+
+.contents { padding-right: 10px; }
+.contents .search { width: 100%; border-bottom: 1px solid #ccc; padding-bottom: 10px; padding-top: 20px;}
+.contents .saveform { padding-top:50px;}
+.form-group{padding-bottom: 10px;}
+.contents .content { width: 100%; height: auto; padding-top: 20px; }
+
+.content-title li a { color: #636363; font-weight: 600; border-radius: 0px; border: 0px;}
+/* .content-msg .title { float: left; }
+.content-msg .title h1 { font-family: "Hiragino Sans GB", "Microsoft YaHei", \9ED1\4F53, \5b8b\4f53, sans-serif; font-weight: 700; }
+.content-msg .title .exp { color: #777; font-size: 16px; font-weight: 100; } */
+/* .content-msg .content-column { float: right; padding-top: 25px; } */
+
+.title-1 { border-bottom: 2px solid #16C1A0; height:45px;}
+.title-1 .content-title { border-bottom: 2px solid #16C1A0; }
+.title-1 li a { padding-bottom: 3px;}
+.title-1 li a:hover { background-color: transparent; color: #16C1A0; border-bottom: 3px solid #16C1A0; }
+.title-1 .selected { color: #16C1A0; border-bottom: 3px solid #16C1A0; }
+
+/**切换功能**/
+a.slidesjs-next {display:none;}
+a.slidesjs-previous {display:none;}
+ul.slidesjs-pagination{display:none;}

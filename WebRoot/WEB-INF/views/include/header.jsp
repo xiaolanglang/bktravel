@@ -1,0 +1,21 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<meta charset="UTF-8">
+<meta
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	name="viewport">
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<%-- <link rel="shortcut icon" href="<%=imgPath%>favicon.ico" type="image/x-icon" /> --%>
+<link rel="stylesheet" type="text/css" href="<%=cssPath%>common/style.css">
+<link rel="stylesheet" type="text/css" href="<%=cssPath%>common/select2.css">
+<script type="text/javascript" src="<%=jsPath%>common/jquery_1.7.2.js"></script>
+<script type="text/javascript" src="<%=jsPath%>common/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<%=jsPath%>common/select2.min.js"></script>
+<script type="text/javascript" src="<%=jsPath%>common/jquery.linkage.js"></script>
+<script type="text/javascript" src="<%=jsPath%>modules/common/bk.js"></script>
+<script type="text/javascript" src="<%=jsPath%>modules/common/ready.js"></script>

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.contents .search:before, .contents .search:after,
+.contents .pageform:before, .contents .pageform:after,
+.contents .page:before, .contents .page:after { display: table; content: ""; clear: both; }
+
+html, body, .content { width: 100%; height: 100%; font-size: 13px;}
+
+.contents { padding-right: 10px; }
+.contents .search { width: 100%; border-bottom: 1px solid #ccc; padding-bottom: 10px; padding-top: 20px;}
+.contents .pageform { width: 100%; padding-top:20px;}
+.contents .content { width: 100%; height: auto; padding-top: 20px; }
+.contents .table a { text-decoration: none; }
+.content .page{padding-top: 20px;padding-bottom: 20px;float:right;}
+
+@media all and (min-width: 768px) { .form-horizontal .form-group { float: left; width: 50%; } }
+@media all and (min-width: 992px) { .form-horizontal .form-group { float: left; width: 33.33333%; } }
+@media all and (min-width: 1200px) { .form-horizontal .form-group { float: left; width: 25%; } }

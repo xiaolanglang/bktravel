@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.bkweb.modules.position.entity.Nation" table="base_nation" dynamic-insert="true" lazy="true">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid.hex" />
+		</id>
+		<many-to-one name="continent" class="com.bkweb.modules.position.entity.Continent" lazy="proxy">
+			<column name="delta_id" length="32" />
+		</many-to-one>
+		<property name="name" type="java.lang.String">
+			<column name="name_zh" length="15" />
+		</property>
+		<property name="nameEn" type="java.lang.String">
+			<column name="name_en" length="20" />
+		</property>
+	</class>
+</hibernate-mapping>

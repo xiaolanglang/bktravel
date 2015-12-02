@@ -1,0 +1,66 @@
+.fileupload{
+	padding-bottom:30px;
+}
+.fileupload h3{
+	margin:0px;
+}
+.img-box {
+	width: 100%;
+	height: 400px;
+	overflow-y: auto;
+	box-shadow: 0 0 10px 3px #888;
+	padding-bottom:15px;
+}
+
+.scroll::-webkit-scrollbar {
+	-webkit-appearance: none;
+	background-color: black;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+	border-radius: 4px;
+	background-color: rgba(255, 255, 255, .8);
+}
+
+.img-box .item {
+	text-align: center;
+}
+
+.item {
+	border: 3px solid transparent;
+	float: left;
+	margin: 4px 4px 0 0;
+	width: 140px;
+	height: 130px;
+}
+
+.item:hover {
+	border-color: #2E80DC;
+}
+
+.file-icon {
+	width: 95px;
+	height: 95px;
+	display: inline-block;
+	text-align: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.file-name>a {
+	width: 140px;
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
