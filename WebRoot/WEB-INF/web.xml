@@ -38,7 +38,7 @@
   <filter>
     <description>登录过滤器</description>
     <filter-name>loginFilter</filter-name>
-    <filter-class>com.bkweb.sys.account.filter.LoginFilter</filter-class>
+    <filter-class>com.bktravel.sys.account.filter.LoginFilter</filter-class>
   </filter>
   <filter>
     <filter-name>gZip</filter-name>
@@ -79,7 +79,7 @@
   </filter-mapping>
   <filter>
     <filter-name>notFound</filter-name>
-    <filter-class>com.bkweb.sys.log.filter.NotFoundErrorFilter</filter-class>
+    <filter-class>com.bktravel.sys.log.filter.NotFoundErrorFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>notFound</filter-name>

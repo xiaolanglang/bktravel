@@ -65,7 +65,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mappingDirectoryLocations">
 			<list>
-				<value>classpath:mapper/</value>
+				<value>classpath:/mapper/</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

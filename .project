@@ -3,6 +3,7 @@
 	<name>bktravel</name>
 	<comment></comment>
 	<projects>
+		<project>InfrastructureProjects</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

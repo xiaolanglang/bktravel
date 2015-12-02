@@ -4,8 +4,8 @@ import java.lang.reflect.Field;
 
 import org.junit.Test;
 
+import com.bktravel.modules.position.entity.Nation;
 import com.bkweb.common.utils.Reflections;
-import com.bkweb.modules.position.entity.Nation;
 
 public class reflection {
 	@Test

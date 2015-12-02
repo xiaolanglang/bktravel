@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.bkweb.modules.user.view.BkUserView" table="bk_userinfo">
+	<class name="com.bktravel.modules.user.view.BkUserView" table="bk_userinfo">
 		<cache usage="read-only"/>
 		<id name="id" type="java.lang.String">
 			<column name="id" length="32" />

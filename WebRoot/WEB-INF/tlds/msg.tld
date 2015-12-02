@@ -14,28 +14,28 @@
 	<function>
 	    <description>获取字典对象列表</description>
 	    <name>getDictList</name>
-	    <function-class>com.bkweb.common.tld.Message</function-class>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
 	    <function-signature>java.util.List getDictList(java.lang.String)</function-signature>
 	    <example>${msg:getDictList(type)}</example>  
   	</function>
   	<function>
 	    <description>获取字典对象label</description>
 	    <name>getDictLabel</name>
-	    <function-class>com.bkweb.common.tld.Message</function-class>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
 	    <function-signature>java.util.List getDictLabel(java.lang.String,java.lang.String)</function-signature>
 	    <example>${msg:getDictLabel(value,type)}</example>  
   	</function>
   	<function>
 	    <description>获取字典对象label</description>
 	    <name>getDictLabels</name>
-	    <function-class>com.bkweb.common.tld.Message</function-class>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
 	    <function-signature>java.util.List getDictLabels(java.lang.String,java.lang.String)</function-signature>
 	    <example>${msg:getDictLabels(values,type)}</example>  
   	</function>
   	<function>
 	    <description>创建分业标签</description>
 	    <name>page</name>
-	    <function-class>com.bkweb.common.tld.Message</function-class>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
 	    <function-signature>java.lang.String page(com.bkweb.common.utils.hibernatepage.HPage)</function-signature>
 	    <example>${msg:page(page)}</example>  
   	</function>
