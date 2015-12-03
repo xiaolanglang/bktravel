@@ -15,25 +15,12 @@ public class BkAccount extends DataEntity<BkAccount> {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String username;
-	private String passowrd;
+	private String password;
 
 	// Constructors
 
 	/** default constructor */
 	public BkAccount() {
-	}
-
-	/** minimal constructor */
-	public BkAccount(String username, String passowrd) {
-		this.username = username;
-		this.passowrd = passowrd;
-	}
-
-	public BkAccount(String id, String username, String passowrd) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.passowrd = passowrd;
 	}
 
 	public String getUsername() {
@@ -44,12 +31,12 @@ public class BkAccount extends DataEntity<BkAccount> {
 		this.username = username;
 	}
 
-	public String getPassowrd() {
-		return this.passowrd;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPassowrd(String passowrd) {
-		this.passowrd = passowrd;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

@@ -59,7 +59,7 @@ public class TestHibernateWithSpring {
 
 			BkAccount account = new BkAccount();
 			account.setUsername(String.valueOf(i));
-			account.setPassowrd(String.valueOf(i));
+			account.setPassword(String.valueOf(i));
 			session.save(account);
 			if (i == j * 100000) {
 				System.out.println("????");

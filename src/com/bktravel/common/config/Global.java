@@ -15,12 +15,14 @@ import com.google.common.collect.Maps;
  * @author ThinkGem
  * @version 2014-06-25
  */
-public class Global extends com.bkweb.common.config.Global{
+public class Global extends com.bkweb.common.config.Global {
 
 	/**
 	 * 当前对象实例
 	 */
 	private static Global global = new Global();
+
+	public static String CHART_SET = "UTF-8";
 
 	/**
 	 * 保存全局属性值

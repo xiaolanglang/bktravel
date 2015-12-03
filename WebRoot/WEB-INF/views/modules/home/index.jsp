@@ -27,7 +27,7 @@
 				<div class="user-msg-menu" id="user-msg-dropmenu">
 					<ul class="dropdown-menu">
 						<li>
-							<a>下拉菜单项</a>
+							<a href="<%=basePath %>account/loginout">退出</a>
 						</li>
 						<li>
 							<a>下拉菜单项</a>

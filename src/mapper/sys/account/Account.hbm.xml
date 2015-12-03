@@ -10,8 +10,8 @@
 		<property name="username" type="java.lang.String">
 			<column name="username" length="20" not-null="true" />
 		</property>
-		<property name="passowrd" type="java.lang.String">
-			<column name="passowrd" length="15" not-null="true" />
+		<property name="password" type="java.lang.String">
+			<column name="password" length="15" not-null="true" />
 		</property>
 	</class>
 </hibernate-mapping>

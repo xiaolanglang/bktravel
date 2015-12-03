@@ -24,7 +24,7 @@ public class AttractionController extends BaseController {
 	@RequestMapping("list")
 	public String findList(Attraction attraction, Integer pageNum, Model model) {
 		HPage<Attraction> page = new HPage<Attraction>(pageNum);
-		attractionService.findPageList(attraction, true, page,"city");
+		attractionService.findPageList(attraction, true, page, "city");
 		model.addAttribute("page", page);
 		model.addAttribute("attraction", attraction);
 		return "attraction/attraction/list";
@@ -41,7 +41,7 @@ public class AttractionController extends BaseController {
 	public String edit(Attraction attraction, Model model) {
 		if (attraction != null && !StringUtils.isEmpty(attraction.getId())) {
 			attraction = attractionService.get(attraction);
-		} 
+		}
 
 		model.addAttribute("attraction", attraction);
 		return "attraction/attraction/save";

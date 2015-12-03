@@ -6,7 +6,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-	<context:property-placeholder ignore-unresolvable="true" location="classpath:/config/privates/bkweb.properties" />
+	<context:property-placeholder ignore-unresolvable="true"
+		location="classpath:/config/privates/bkweb.properties" />
 
 	<bean id="myObjectMapper" class="com.bkweb.common.entity.json.MyObjectMapper"></bean>
 	<mvc:annotation-driven>
@@ -26,12 +27,11 @@
 		<property name="prefix" value="${web.view.prefix}" />
 		<property name="suffix" value="${web.view.suffix}" />
 	</bean>
-	
+
 	<!-- 上传文件拦截，设置最大上传文件大小 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
-		p:defaultEncoding="utf-8" p:maxUploadSize="52428880"
-		 p:uploadTempDir="upload/temp" />
-	
+		p:defaultEncoding="utf-8" p:maxUploadSize="52428880" p:uploadTempDir="upload/temp" />
+
 	<bean id="validatemessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="fileEncodings" value="utf-8" />
 		<property name="cacheSeconds" value="120" />
@@ -41,7 +41,7 @@
 		<!--不设置则默认为classpath下的 ValidationMessages.properties -->
 		<property name="validationMessageSource" ref="validatemessageSource" />
 	</bean>
-	
+
 	<!-- 拦截器配置 -->
 	<mvc:interceptors>
 		<!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
@@ -52,10 +52,10 @@
 			<bean class="com.bktravel.sys.log.interceptor.LogInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
-	
+
 	<!-- 这是一种配置异常的方法，另外一种是在java类中配置，两个配一个就好了，如果同时配置的话，优先java类中的配置 -->
 	<!-- <bean id="exceptionResolver" class="com.mybatis.MyHandlerExceptionResolver"/> -->
-	<!-- 定义无Controller的path<->view直接映射 -->
-	<mvc:view-controller path="/" view-name="home/index" />
+
+	<!-- <mvc:view-controller path="/" view-name="sys/login/login" /> -->
 
 </beans>

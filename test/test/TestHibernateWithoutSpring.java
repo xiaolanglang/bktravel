@@ -20,7 +20,7 @@ import com.bktravel.sys.account.entity.BkAccount;
  * 由于hibernatesessionfactory删除，本测试单元作废
  * 
  * @author Administrator
- *
+ * 
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:hibernate.cfg.xml" })
@@ -35,7 +35,7 @@ public class TestHibernateWithoutSpring {
 		} catch (FileNotFoundException ex) {
 			System.err.println("Cannot Initialize log4j");
 		}
-//		session = HibernateSessionFactory.getSession();
+		// session = HibernateSessionFactory.getSession();
 		transaction = session.beginTransaction();
 	}
 
@@ -50,7 +50,7 @@ public class TestHibernateWithoutSpring {
 	public void testAccount() {
 		BkAccount account = new BkAccount();
 		account.setUsername("1");
-		account.setPassowrd("123");
+		account.setPassword("123");
 		session.save(account);
 	}
 
@@ -59,7 +59,7 @@ public class TestHibernateWithoutSpring {
 		BkUser bkUser = new BkUser();
 		BkAccount account = new BkAccount();
 		account.setUsername("111");
-		account.setPassowrd("111");
+		account.setPassword("111");
 		account.setId("8aba95525059c9a1015059c9a2530000");
 		bkUser.setAccount(account);
 		bkUser.setAge(20);
@@ -76,5 +76,5 @@ public class TestHibernateWithoutSpring {
 		BkUser bkUser = (BkUser) session.get(BkUser.class, "8aba95525059d394015059d395110000");
 		System.out.println(bkUser);
 	}
-	
+
 }
