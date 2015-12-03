@@ -7,6 +7,6 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/bktravel/WebRoot/WEB-INF/classes"/>
-        <property name="context-root" value="bktravel"/>
+        <property name="context-root" value="/bktravel"/>
     </wb-module>
 </project-modules>
