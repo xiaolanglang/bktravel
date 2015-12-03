@@ -5,7 +5,7 @@ package com.bktravel.sys.log.web;
 
 import org.springframework.stereotype.Controller;
 
-import com.bkweb.common.web.BaseController;
+import com.bktravel.common.web.BaseController;
 
 /**
  * 日志Controller

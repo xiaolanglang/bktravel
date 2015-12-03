@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.position.entity.City;
 import com.bktravel.modules.position.entity.Continent;
 import com.bktravel.modules.position.entity.Country;
@@ -16,7 +17,7 @@ import com.bktravel.modules.position.service.PositionService;
 
 @Controller
 @RequestMapping("${adminPath}/position")
-public class PositionController {
+public class PositionController extends BaseController {
 
 	@Autowired
 	private PositionService positionService;

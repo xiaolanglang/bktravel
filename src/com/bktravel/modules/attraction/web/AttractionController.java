@@ -5,12 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.attraction.entity.Attraction;
 import com.bktravel.modules.attraction.service.AttractionService;
 import com.bktravel.modules.position.service.PositionService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
-import com.bkweb.common.web.BaseController;
 
 @Controller
 @RequestMapping("${adminPath}/attraction")

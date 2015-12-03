@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bktravel.common.web.BaseController;
 import com.bktravel.sys.account.entity.BkAccount;
 import com.bktravel.sys.account.service.BkAccountService;
 import com.bkweb.common.utils.hibernatepage.HPage;
-import com.bkweb.common.web.BaseController;
 
 /**
  * 用户Controller
