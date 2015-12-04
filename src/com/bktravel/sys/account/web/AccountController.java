@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bktravel.common.config.Global;
+import com.bktravel.common.utils.AccountUtils;
 import com.bktravel.common.web.BaseController;
-import com.bktravel.sys.account.entity.BkAccount;
-import com.bktravel.sys.account.service.BkAccountService;
-import com.bkweb.common.utils.MD5;
+import com.bktravel.sys.account.entity.Account;
+import com.bktravel.sys.account.service.AccountService;
+import com.bktravel.sys.security.SystemAuthorizingRealm.Principal;
 import com.bkweb.common.utils.hibernatepage.HPage;
 
 /**
@@ -24,33 +24,36 @@ import com.bkweb.common.utils.hibernatepage.HPage;
  */
 @Controller
 @RequestMapping({ "${adminPath}/account", "" })
-public class BkAccountController extends BaseController {
+public class AccountController extends BaseController {
 
 	@Autowired
-	private BkAccountService accountService;
+	private AccountService accountService;
 
 	@RequestMapping("list")
-	public String findbkAccountList(BkAccount account, int pageNum, HttpServletRequest request) {
-		List<BkAccount> list = accountService.findPageList(account, true, new HPage<BkAccount>(pageNum));
+	public String findbkAccountList(Account account, int pageNum, HttpServletRequest request) {
+		List<Account> list = accountService.findPageList(account, true, new HPage<Account>(pageNum));
 		request.setAttribute("userList", list);
 		return "bkAccount/bkAccountList";
 	}
 
 	@RequestMapping("")
 	public String index(HttpSession session) {
-		Object bkAccount = session.getAttribute("account");
-		if (bkAccount == null) {
-			return "sys/login/login";
+		Principal principal = AccountUtils.getPrincipal();
+		// 如果已经登录，则跳转到管理首页
+		if (principal != null && !principal.isMobileLogin()) {
+			return "home/index";
 		}
-		return "home/index";
+		return "sys/login/login";
 	}
 
+	/**
+	 * 登录失败之后进入的方法
+	 * 
+	 * @param account
+	 * @return
+	 */
 	@RequestMapping("login")
-	public String login(BkAccount account, HttpSession session) {
-		String userName = account.getUsername().trim();
-		String passWord = account.getPassword().trim();
-		passWord = MD5.sign(passWord, userName, Global.CHART_SET);
-		accountService.login(session, userName, passWord);
+	public String login(Account account) {
 
 		return "redirect:/";
 	}

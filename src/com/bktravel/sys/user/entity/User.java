@@ -1,39 +1,37 @@
-package com.bktravel.modules.user.entity;
+package com.bktravel.sys.user.entity;
 
 import java.util.Date;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
-import com.bktravel.sys.account.entity.BkAccount;
+import com.bktravel.sys.account.entity.Account;
 import com.bkweb.common.entity.DataEntity;
 
 /**
  * User entity. @author MyEclipse Persistence Tools
  */
 
-public class BkUser extends DataEntity<BkUser> implements java.io.Serializable {
+public class User extends DataEntity<User> implements java.io.Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private BkAccount account;
+	private Account account;
 	private String name;
 	private String sex;
 	private Integer age;
 	private Date birthday;
 	private String card;
-	
-	
 
 	// Constructors
 
 	/** default constructor */
-	public BkUser() {
+	public User() {
 	}
 
 	/** minimal constructor */
-	public BkUser(String name, String sex, Integer age, Date birthday, String card) {
+	public User(String name, String sex, Integer age, Date birthday, String card) {
 		this.name = name;
 		this.sex = sex;
 		this.age = age;
@@ -42,7 +40,7 @@ public class BkUser extends DataEntity<BkUser> implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public BkUser(BkAccount account, String name, String sex, Integer age, Date birthday, String card) {
+	public User(Account account, String name, String sex, Integer age, Date birthday, String card) {
 		this.account = account;
 		this.name = name;
 		this.sex = sex;
@@ -53,11 +51,11 @@ public class BkUser extends DataEntity<BkUser> implements java.io.Serializable {
 
 	// Property accessors
 
-	public BkAccount getAccount() {
+	public Account getAccount() {
 		return this.account;
 	}
 
-	public void setAccount(BkAccount account) {
+	public void setAccount(Account account) {
 		this.account = account;
 	}
 

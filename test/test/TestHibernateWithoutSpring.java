@@ -13,8 +13,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bktravel.modules.user.entity.BkUser;
-import com.bktravel.sys.account.entity.BkAccount;
+import com.bktravel.sys.account.entity.Account;
+import com.bktravel.sys.user.entity.User;
 
 /**
  * 由于hibernatesessionfactory删除，本测试单元作废
@@ -48,7 +48,7 @@ public class TestHibernateWithoutSpring {
 
 	@Test
 	public void testAccount() {
-		BkAccount account = new BkAccount();
+		Account account = new Account();
 		account.setUsername("1");
 		account.setPassword("123");
 		session.save(account);
@@ -56,8 +56,8 @@ public class TestHibernateWithoutSpring {
 
 	@Test
 	public void testUser_save() {
-		BkUser bkUser = new BkUser();
-		BkAccount account = new BkAccount();
+		User bkUser = new User();
+		Account account = new Account();
 		account.setUsername("111");
 		account.setPassword("111");
 		account.setId("8aba95525059c9a1015059c9a2530000");
@@ -73,7 +73,7 @@ public class TestHibernateWithoutSpring {
 
 	@Test
 	public void testUser_get() {
-		BkUser bkUser = (BkUser) session.get(BkUser.class, "8aba95525059d394015059d395110000");
+		User bkUser = (User) session.get(User.class, "8aba95525059d394015059d395110000");
 		System.out.println(bkUser);
 	}
 

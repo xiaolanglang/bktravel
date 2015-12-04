@@ -16,9 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
 import com.bktravel.modules.position.entity.Continent;
-import com.bktravel.modules.user.dao.BkUserDao;
-import com.bktravel.modules.user.entity.BkUser;
-import com.bktravel.modules.user.view.BkUserView;
+import com.bktravel.sys.user.dao.UserDao;
+import com.bktravel.sys.user.entity.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/spring-*.xml" })
@@ -29,7 +28,7 @@ public class TestEhCache {
 	private SessionFactory sessionFactory;
 
 	@Autowired
-	private BkUserDao userDao;
+	private UserDao userDao;
 
 	@Before
 	public void before() {
@@ -74,8 +73,7 @@ public class TestEhCache {
 
 		session = sessionFactory.openSession();
 		session.beginTransaction();
-		// session.createQuery("from BkUser").setCacheable(true).list();
-		session.createCriteria(BkUserView.class).setCacheable(true).list();
+		session.createQuery("from BkUser").setCacheable(true).list();
 
 		session.getTransaction().commit();
 		session.close();
@@ -84,7 +82,7 @@ public class TestEhCache {
 
 		session = sessionFactory.openSession();
 		session.beginTransaction();
-		BkUser bkUser = new BkUser();
+		User bkUser = new User();
 		bkUser.setAge(20);
 		bkUser.setBirthday(new Date());
 		bkUser.setCard("211212121212");
@@ -92,7 +90,7 @@ public class TestEhCache {
 		bkUser.setSex("男");
 		userDao.save(bkUser);
 		System.out.println(bkUser.getId());
-		
+
 		session.flush();
 		session.getTransaction().commit();
 		session.close();
@@ -101,12 +99,11 @@ public class TestEhCache {
 
 		session = sessionFactory.openSession();
 		session.beginTransaction();
-		// session.createQuery("from BkUser").setCacheable(true).list();
-		session.createCriteria(BkUserView.class).setCacheable(true).list();
+		session.createQuery("from BkUser").setCacheable(true).list();
 
 		session.getTransaction().commit();
 		session.close();
-		
+
 		System.out.println("----------------------------------------------------end");
 
 	}

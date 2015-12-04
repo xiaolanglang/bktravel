@@ -2,7 +2,6 @@ package test;
 
 import java.io.FileNotFoundException;
 import java.util.Date;
-import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.junit.Before;
@@ -15,11 +14,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bktravel.modules.user.dao.BkUserDao;
-import com.bktravel.modules.user.entity.BkUser;
-import com.bktravel.modules.user.view.BkUserView;
-import com.bktravel.sys.account.dao.BkAccountDao;
-import com.bktravel.sys.account.entity.BkAccount;
+import com.bktravel.sys.account.dao.AccountDao;
+import com.bktravel.sys.account.entity.Account;
+import com.bktravel.sys.user.dao.UserDao;
+import com.bktravel.sys.user.entity.User;
 import com.bkweb.common.utils.hibernatepage.HPage;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -31,10 +29,10 @@ public class TestCrudDao {
 	private SessionFactory sessionFactory;
 
 	@Autowired
-	private BkAccountDao accountDao;
+	private AccountDao accountDao;
 
 	@Autowired
-	private BkUserDao userDao;
+	private UserDao userDao;
 
 	@Before
 	public void before() {
@@ -48,7 +46,7 @@ public class TestCrudDao {
 	@Test
 	@Rollback(false)
 	public void save() {
-		BkUser bkUser = new BkUser();
+		User bkUser = new User();
 		bkUser.setAge(20);
 		bkUser.setBirthday(new Date());
 		bkUser.setCard("211212121212");
@@ -60,14 +58,14 @@ public class TestCrudDao {
 
 	@Test
 	public void get() {
-		BkUser bkUser = new BkUser();
+		User bkUser = new User();
 		bkUser.setId("8aba95525059d394015059d395110000");
 		userDao.get(bkUser);
 	}
 
 	@Test
 	public void getUpdateGet() {
-		BkUser bkUser = new BkUser();
+		User bkUser = new User();
 		bkUser.setId("8aba95525059d394015059d395110000");
 		userDao.get(bkUser);
 		bkUser.setAge(10);
@@ -85,16 +83,16 @@ public class TestCrudDao {
 
 	@Test
 	public void findPageList() {
-		HPage<BkAccount> page = new HPage<BkAccount>(1);
-		accountDao.findPageList(new BkAccount(), true, page);
-		accountDao.findPageList(new BkAccount(), true, page);
+		HPage<Account> page = new HPage<Account>(1);
+		accountDao.findPageList(new Account(), true, page);
+		accountDao.findPageList(new Account(), true, page);
 		System.out.println(page);
 	}
 
 	@Test
 	@Rollback(false)
 	public void del() {
-		BkUser bkUser = new BkUser();
+		User bkUser = new User();
 		bkUser.setId("8aba9552506430d601506430d89f0000");
 		userDao.delete(bkUser);
 	}
@@ -102,7 +100,7 @@ public class TestCrudDao {
 	@Test
 	@Rollback(false)
 	public void update() {
-		BkUser bkUser = new BkUser();
+		User bkUser = new User();
 		bkUser.setCard("12");
 		bkUser.setId("8aba95525059d394015059d395110000");
 		userDao.update(bkUser);
@@ -111,26 +109,13 @@ public class TestCrudDao {
 	@Test
 	@Rollback(false)
 	public void dynamicUpdate() {
-		BkAccount account=new BkAccount();
+		Account account = new Account();
 		account.setId("123");
-		BkUser user = new BkUser();
+		User user = new User();
 		user.setName("kkkk");
 		user.setId("8aba9552511d73fb01511d73febd0000");
 		user.setAccount(account);
 		userDao.update(user);
-	}
-
-	/**
-	 * 该条测试由于map文件的改变，测试已经失效
-	 */
-	@Test
-	public void sqlQuery() {
-		List<BkUserView> list = (List<BkUserView>) userDao
-				.sqlQueryList(
-						"select a.name,a.id,a.sex,b.username,b.id from bk_userinfo a left join bk_account b on a.accountId = b.id",
-						BkUserView.class, false);
-		System.out.println(list.get(0));
-
 	}
 
 }

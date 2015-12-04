@@ -6,12 +6,12 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.bktravel.sys.dict.entity.Dictionary;
 import com.bkweb.common.dao.impl.CrudDao;
 
-@Component
+@Repository
 public class DictionaryDao extends CrudDao<Dictionary> {
 
 	public int getMaxType(Dictionary dictionary) {
