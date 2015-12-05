@@ -18,8 +18,8 @@
 			</div>
 		</div>
 		<form class="form form-signin" method="post" action="<%=login%>login">
-			<input name="username" type="text" class="form-control" placeholder="用户名" required  />
-			<input name="password" type="password" class="form-control" placeholder="密码" required />
+			<input value="test" name="username" type="text" class="form-control" placeholder="用户名" required  />
+			<input value="123456" name="password" type="password" class="form-control" placeholder="密码" required />
 			<input type="submit" class="btn btn-yellow" value="登录">
 			<div class="checkbox-inline">
 				<label>

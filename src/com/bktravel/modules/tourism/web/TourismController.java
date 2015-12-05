@@ -1,5 +1,6 @@
 package com.bktravel.modules.tourism.web;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,7 @@ public class TourismController extends BaseController {
 	private StartPlaceService startPlaceService;
 
 	@RequestMapping("list")
+	@RequiresPermissions("tourism:list")
 	public String findList(Tourism tourism, Integer pageNum, Model model) {
 		HPage<Tourism> page = new HPage<Tourism>(pageNum);
 		tourismService.findPageList(tourism, true, page);
@@ -44,7 +46,7 @@ public class TourismController extends BaseController {
 		tourism.setStartPlaces(StringUtils.strsToString(tourism.getStartPlace()));
 
 		tourismService.saveOrUpdate(tourism);
-		
+
 		return "redirect:" + adminPath + "/tourism/save_price/" + tourism.getId();
 	}
 

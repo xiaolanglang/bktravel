@@ -52,7 +52,7 @@ public class AccountController extends BaseController {
 	 * @param account
 	 * @return
 	 */
-	@RequestMapping("login")
+	@RequestMapping(value = "login")
 	public String login(Account account) {
 
 		return "redirect:/";

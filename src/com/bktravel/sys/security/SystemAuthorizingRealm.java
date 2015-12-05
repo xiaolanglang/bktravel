@@ -2,12 +2,14 @@ package com.bktravel.sys.security;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.Permission;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.session.Session;
@@ -21,7 +23,6 @@ import com.bktravel.common.config.Global;
 import com.bktravel.common.utils.AccountUtils;
 import com.bktravel.sys.account.entity.Account;
 import com.bktravel.sys.log.util.LogUtils;
-import com.bktravel.sys.role.entity.Role;
 import com.bktravel.sys.service.SystemService;
 import com.bkweb.common.utils.Encodes;
 import com.bkweb.common.web.Servlets;
@@ -128,11 +129,12 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 			// }
 			// }
 			// 添加用户权限
-			info.addStringPermission("account");
+			info.addStringPermission("user");
+			info.addRole("tourism:list2");
 			// 添加用户角色信息
-			for (Role role : account.getRoleList()) {
-				info.addRole(role.getEnname());
-			}
+			// for (Role role : account.getRoleList()) {
+			// info.addRole(role.getEnname());
+			// }
 			// 更新登录IP和时间
 			// systemService.updateAccountLoginInfo(account);
 			// 记录登录日志
@@ -143,50 +145,46 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 		}
 	}
 
-	// @Override
-	// protected void checkPermission(Permission permission, AuthorizationInfo
-	// info) {
-	// authorizationValidate(permission);
-	// super.checkPermission(permission, info);
-	// }
-	//
-	// @Override
-	// protected boolean[] isPermitted(List<Permission> permissions,
-	// AuthorizationInfo info) {
-	// if (permissions != null && !permissions.isEmpty()) {
-	// for (Permission permission : permissions) {
-	// authorizationValidate(permission);
-	// }
-	// }
-	// return super.isPermitted(permissions, info);
-	// }
-	//
-	// @Override
-	// public boolean isPermitted(PrincipalCollection principals, Permission
-	// permission) {
-	// authorizationValidate(permission);
-	// return super.isPermitted(principals, permission);
-	// }
-	//
-	// @Override
-	// protected boolean isPermittedAll(Collection<Permission> permissions,
-	// AuthorizationInfo info) {
-	// if (permissions != null && !permissions.isEmpty()) {
-	// for (Permission permission : permissions) {
-	// authorizationValidate(permission);
-	// }
-	// }
-	// return super.isPermittedAll(permissions, info);
-	// }
+	@Override
+	protected void checkPermission(Permission permission, AuthorizationInfo info) {
+		authorizationValidate(permission);
+		super.checkPermission(permission, info);
+	}
 
-	// /**
-	// * 授权验证方法,模块授权预留接口
-	// *
-	// * @param permission
-	// */
-	// private void authorizationValidate(Permission permission) {
-	//
-	// }
+	@Override
+	protected boolean[] isPermitted(List<Permission> permissions, AuthorizationInfo info) {
+		if (permissions != null && !permissions.isEmpty()) {
+			for (Permission permission : permissions) {
+				authorizationValidate(permission);
+			}
+		}
+		return super.isPermitted(permissions, info);
+	}
+
+	@Override
+	public boolean isPermitted(PrincipalCollection principals, Permission permission) {
+		authorizationValidate(permission);
+		return super.isPermitted(principals, permission);
+	}
+
+	@Override
+	protected boolean isPermittedAll(Collection<Permission> permissions, AuthorizationInfo info) {
+		if (permissions != null && !permissions.isEmpty()) {
+			for (Permission permission : permissions) {
+				authorizationValidate(permission);
+			}
+		}
+		return super.isPermittedAll(permissions, info);
+	}
+
+	/**
+	 * 授权验证方法,模块授权预留接口
+	 * 
+	 * @param permission
+	 */
+	private void authorizationValidate(Permission permission) {
+
+	}
 
 	// /**
 	// * 设定密码校验的Hash算法与迭代次数

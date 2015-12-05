@@ -87,7 +87,7 @@ public class LogUtils {
 				return;
 			}
 			// 保存日志信息
-			logDao.save(log);
+			// logDao.save(log);
 		}
 	}
 
