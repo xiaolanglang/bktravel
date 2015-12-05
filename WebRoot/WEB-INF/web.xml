@@ -77,6 +77,7 @@
 		<url-pattern>/static/css/*</url-pattern>
 		<url-pattern>/static/js/*</url-pattern>
 		<url-pattern>*.css</url-pattern>
+		<url-pattern>/</url-pattern>
 	</filter-mapping>
 
 	<!-- springmvc配置 -->

@@ -39,6 +39,14 @@ public class SystemService extends BaseService {
 
 	// -- account Service --//
 
+	public Account get(Account account) {
+		return accountDao.get(account);
+	}
+
+	public Account getAccountByUsername(Account account) {
+		return accountDao.getAccountByUsername(account);
+	}
+
 	/**
 	 * 登录
 	 * 

@@ -34,6 +34,10 @@ public class Account extends DataEntity<Account> {
 		this.password = password;
 	}
 
+	public Account(String id) {
+		this.id = id;
+	}
+
 	public String getUsername() {
 		return this.username;
 	}

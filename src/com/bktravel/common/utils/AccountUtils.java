@@ -13,11 +13,10 @@ import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
-import com.bktravel.sys.account.dao.AccountDao;
 import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.role.dao.RoleDao;
 import com.bktravel.sys.role.entity.Role;
 import com.bktravel.sys.security.SystemAuthorizingRealm.Principal;
+import com.bktravel.sys.service.SystemService;
 import com.bkweb.common.utils.CacheUtils;
 import com.bkweb.common.utils.SpringContextHolder;
 
@@ -29,14 +28,8 @@ import com.bkweb.common.utils.SpringContextHolder;
  */
 public class AccountUtils {
 
-	private static AccountDao accountDao = SpringContextHolder.getBean(AccountDao.class);
-	private static RoleDao roleDao = SpringContextHolder.getBean(RoleDao.class);
-	// private static MenuDao menuDao =
-	// SpringContextHolder.getBean(MenuDao.class);
-	// private static AreaDao areaDao =
-	// SpringContextHolder.getBean(AreaDao.class);
-	// private static OfficeDao officeDao =
-	// SpringContextHolder.getBean(OfficeDao.class);
+	// 因为使用了静态变量，所以不能使用@autowire注解
+	private static SystemService systemService = SpringContextHolder.getBean(SystemService.class);
 
 	public static final String ACCOUNT_CACHE = "accountCache";
 	public static final String ACCOUNT_CACHE_ID_ = "id_";
@@ -58,11 +51,11 @@ public class AccountUtils {
 	public static Account get(String id) {
 		Account account = (Account) CacheUtils.get(ACCOUNT_CACHE, ACCOUNT_CACHE_ID_ + id);
 		if (account == null) {
-			account = accountDao.get(account);
+			account = systemService.get(new Account(id));
 			if (account == null) {
 				return null;
 			}
-			account.setRoleList(roleDao.findList(new Role(account), false));
+			// account.setRoleList(roleDao.findList(new Role(account), false));
 			CacheUtils.put(ACCOUNT_CACHE, ACCOUNT_CACHE_ID_ + account.getId(), account);
 			CacheUtils.put(ACCOUNT_CACHE, ACCOUNT_CACHE_LOGIN_NAME_ + account.getUsername(), account);
 		}
@@ -78,11 +71,11 @@ public class AccountUtils {
 	public static Account getByUsername(String username) {
 		Account account = (Account) CacheUtils.get(ACCOUNT_CACHE, ACCOUNT_CACHE_LOGIN_NAME_ + username);
 		if (account == null) {
-			account = accountDao.getAccountByUsername(new Account(username, null));
+			account = systemService.getAccountByUsername(new Account(username, null));
 			if (account == null) {
 				return null;
 			}
-			account.setRoleList(roleDao.findList(new Role(account), false));
+			// account.setRoleList(roleDao.findList(new Role(account), false));
 			CacheUtils.put(ACCOUNT_CACHE, ACCOUNT_CACHE_ID_ + account.getId(), account);
 			CacheUtils.put(ACCOUNT_CACHE, ACCOUNT_CACHE_LOGIN_NAME_ + account.getUsername(), account);
 		}
@@ -140,18 +133,18 @@ public class AccountUtils {
 	 * @return
 	 */
 	public static List<Role> getRoleList() {
-		@SuppressWarnings("unchecked")
-		List<Role> roleList = (List<Role>) getCache(CACHE_ROLE_LIST);
-		if (roleList == null) {
-			Account account = getAccount();
-			if (account.isAdmin()) {
-				roleList = roleDao.findAllList(Role.class, true);
-			} else {
-				roleList = roleDao.findList(new Role(account), false);
-			}
-			putCache(CACHE_ROLE_LIST, roleList);
-		}
-		return roleList;
+		// @SuppressWarnings("unchecked")
+		// List<Role> roleList = (List<Role>) getCache(CACHE_ROLE_LIST);
+		// if (roleList == null) {
+		// Account account = getAccount();
+		// if (account.isAdmin()) {
+		// roleList = roleDao.findAllList(Role.class, true);
+		// } else {
+		// roleList = roleDao.findList(new Role(account), false);
+		// }
+		// putCache(CACHE_ROLE_LIST, roleList);
+		// }
+		return null;
 	}
 
 	/**
