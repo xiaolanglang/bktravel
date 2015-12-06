@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bktravel.sys.log.util.LogUtils;
 import com.bkweb.common.service.BaseService;
+import com.bkweb.common.utils.DateUtils;
 
 /**
  * 日志拦截器
@@ -49,12 +50,12 @@ public class LogInterceptor extends BaseService implements HandlerInterceptor {
 		if (logger.isDebugEnabled()) {
 			long beginTime = startTimeThreadLocal.get();// 得到线程绑定的局部变量（开始时间）
 			long endTime = System.currentTimeMillis(); // 2、结束时间
-//			logger.debug("计时结束：{}  耗时：{}  URI: {}  最大内存: {}m  已分配内存: {}m  已分配内存中的剩余空间: {}m  最大可用内存: {}m",
-//					new SimpleDateFormat("hh:mm:ss.SSS").format(endTime),
-//					DateUtils.formatDateTime(endTime - beginTime), request.getRequestURI(), Runtime.getRuntime()
-//							.maxMemory() / 1024 / 1024, Runtime.getRuntime().totalMemory() / 1024 / 1024, Runtime
-//							.getRuntime().freeMemory() / 1024 / 1024, (Runtime.getRuntime().maxMemory()
-//							- Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) / 1024 / 1024);
+			logger.debug("计时结束：{}  耗时：{}  URI: {}  最大内存: {}m  已分配内存: {}m  已分配内存中的剩余空间: {}m  最大可用内存: {}m",
+					new SimpleDateFormat("hh:mm:ss.SSS").format(endTime),
+					DateUtils.formatDateTime(endTime - beginTime), request.getRequestURI(), Runtime.getRuntime()
+							.maxMemory() / 1024 / 1024, Runtime.getRuntime().totalMemory() / 1024 / 1024, Runtime
+							.getRuntime().freeMemory() / 1024 / 1024, (Runtime.getRuntime().maxMemory()
+							- Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) / 1024 / 1024);
 		}
 
 	}
