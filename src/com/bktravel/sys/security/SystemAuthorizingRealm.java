@@ -23,6 +23,8 @@ import com.bktravel.common.config.Global;
 import com.bktravel.common.utils.AccountUtils;
 import com.bktravel.sys.account.entity.Account;
 import com.bktravel.sys.log.util.LogUtils;
+import com.bktravel.sys.purview.entity.Permissions;
+import com.bktravel.sys.purview.entity.Role;
 import com.bktravel.sys.service.SystemService;
 import com.bkweb.common.utils.Encodes;
 import com.bkweb.common.web.Servlets;
@@ -118,23 +120,16 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 		Account account = systemService.getAccountByUsername(principal.getUsername());
 		if (account != null) {
 			SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-			// List<Menu> list = AccountUtils.getMenuList();
-			// for (Menu menu : list) {
-			// if (StringUtils.isNotBlank(menu.getPermission())) {
-			// // 添加基于Permission的权限信息
-			// for (String permission : StringUtils.split(menu.getPermission(),
-			// ",")) {
-			// info.addStringPermission(permission);
-			// }
-			// }
-			// }
+			List<Permissions> list = AccountUtils.getPermissionList();
+			for (Permissions permission : list) {
+				info.addStringPermission(permission.getPermission());
+			}
 			// 添加用户权限
 			info.addStringPermission("user");
-			info.addRole("tourism:list2");
 			// 添加用户角色信息
-			// for (Role role : account.getRoleList()) {
-			// info.addRole(role.getEnname());
-			// }
+			for (Role role : AccountUtils.getRoleList()) {
+				info.addRole(role.getName());
+			}
 			// 更新登录IP和时间
 			// systemService.updateAccountLoginInfo(account);
 			// 记录登录日志

@@ -3,8 +3,6 @@
  */
 package com.bktravel.common.utils;
 
-import java.awt.Menu;
-import java.awt.geom.Area;
 import java.util.List;
 
 import org.apache.shiro.SecurityUtils;
@@ -14,7 +12,9 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
 import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.role.entity.Role;
+import com.bktravel.sys.purview.entity.AccountRole;
+import com.bktravel.sys.purview.entity.Permissions;
+import com.bktravel.sys.purview.entity.Role;
 import com.bktravel.sys.security.SystemAuthorizingRealm.Principal;
 import com.bktravel.sys.service.SystemService;
 import com.bkweb.common.utils.CacheUtils;
@@ -37,7 +37,7 @@ public class AccountUtils {
 	public static final String ACCOUNT_CACHE_LIST_BY_OFFICE_ID_ = "oid_";
 
 	public static final String CACHE_ROLE_LIST = "roleList";
-	public static final String CACHE_MENU_LIST = "menuList";
+	public static final String CACHE_PERMISSIONS_LIST = "permissionsList";
 	public static final String CACHE_AREA_LIST = "areaList";
 	public static final String CACHE_OFFICE_LIST = "officeList";
 	public static final String CACHE_OFFICE_ALL_LIST = "officeAllList";
@@ -87,7 +87,7 @@ public class AccountUtils {
 	 */
 	public static void clearCache() {
 		removeCache(CACHE_ROLE_LIST);
-		removeCache(CACHE_MENU_LIST);
+		removeCache(CACHE_PERMISSIONS_LIST);
 		removeCache(CACHE_AREA_LIST);
 		removeCache(CACHE_OFFICE_LIST);
 		removeCache(CACHE_OFFICE_ALL_LIST);
@@ -133,93 +133,41 @@ public class AccountUtils {
 	 * @return
 	 */
 	public static List<Role> getRoleList() {
-		// @SuppressWarnings("unchecked")
-		// List<Role> roleList = (List<Role>) getCache(CACHE_ROLE_LIST);
-		// if (roleList == null) {
-		// Account account = getAccount();
-		// if (account.isAdmin()) {
-		// roleList = roleDao.findAllList(Role.class, true);
-		// } else {
-		// roleList = roleDao.findList(new Role(account), false);
-		// }
-		// putCache(CACHE_ROLE_LIST, roleList);
-		// }
-		return null;
+		@SuppressWarnings("unchecked")
+		List<Role> roleList = (List<Role>) getCache(CACHE_ROLE_LIST);
+		if (roleList == null) {
+			Account account = getAccount();
+			if (account.isAdmin()) {
+				roleList = systemService.findAllRoleList();
+			} else {
+				roleList = systemService.findRoleListByAccount(account);
+			}
+			putCache(CACHE_ROLE_LIST, roleList);
+		}
+		return roleList;
 	}
 
 	/**
-	 * 获取当前用户授权菜单
+	 * 获取当前用户授权权限
 	 * 
 	 * @return
 	 */
-	public static List<Menu> getMenuList() {
-		// @SuppressWarnings("unchecked")
-		// List<Menu> menuList = (List<Menu>) getCache(CACHE_MENU_LIST);
-		// if (menuList == null) {
-		// Account account = getAccount();
-		// if (account.isAdmin()) {
-		// menuList = menuDao.findAllList(new Menu());
-		// } else {
-		// Menu m = new Menu();
-		// m.setaccountId(account.getId());
-		// menuList = menuDao.findByaccountId(m);
-		// }
-		// putCache(CACHE_MENU_LIST, menuList);
-		// }
-		return null;
+	public static List<Permissions> getPermissionList() {
+		@SuppressWarnings("unchecked")
+		List<Permissions> permissionsList = (List<Permissions>) getCache(CACHE_PERMISSIONS_LIST);
+		if (permissionsList == null) {
+			Account account = getAccount();
+			if (account.isAdmin()) {
+				permissionsList = systemService.findAllPermissionsList();
+			} else {
+				AccountRole ar = new AccountRole();
+				ar.setAccount(account);
+				permissionsList = systemService.findPermissionsByAccount(account);
+			}
+			putCache(CACHE_PERMISSIONS_LIST, permissionsList);
+		}
+		return permissionsList;
 	}
-
-	/**
-	 * 获取当前用户授权的区域
-	 * 
-	 * @return
-	 */
-	public static List<Area> getAreaList() {
-		// @SuppressWarnings("unchecked")
-		// List<Area> areaList = (List<Area>) getCache(CACHE_AREA_LIST);
-		// if (areaList == null) {
-		// areaList = areaDao.findAllList(new Area());
-		// putCache(CACHE_AREA_LIST, areaList);
-		// }
-		return null;
-	}
-
-	// /**
-	// * 获取当前用户有权限访问的部门
-	// *
-	// * @return
-	// */
-	// public static List<Office> getOfficeList() {
-	// @SuppressWarnings("unchecked")
-	// List<Office> officeList = (List<Office>) getCache(CACHE_OFFICE_LIST);
-	// if (officeList == null) {
-	// account account = getaccount();
-	// if (account.isAdmin()) {
-	// officeList = officeDao.findAllList(new Office());
-	// } else {
-	// Office office = new Office();
-	// office.getSqlMap().put("dsf", BaseService.dataScopeFilter(account, "a",
-	// ""));
-	// officeList = officeDao.findList(office);
-	// }
-	// putCache(CACHE_OFFICE_LIST, officeList);
-	// }
-	// return officeList;
-	// }
-
-	// /**
-	// * 获取当前用户有权限访问的部门
-	// *
-	// * @return
-	// */
-	// public static List<Office> getOfficeAllList() {
-	// @SuppressWarnings("unchecked")
-	// List<Office> officeList = (List<Office>) getCache(CACHE_OFFICE_ALL_LIST);
-	// if (officeList == null) {
-	// officeList = officeDao.findAllList(new Office());
-	// }
-	// return officeList;
-	// }
 
 	/**
 	 * 获取授权主要对象
@@ -263,34 +211,23 @@ public class AccountUtils {
 		return null;
 	}
 
-	// ============== account Cache ==============
+	// ============== account Cache ============== //
 
 	public static Object getCache(String key) {
 		return getCache(key, null);
 	}
 
 	public static Object getCache(String key, Object defaultValue) {
-		// Object obj = getCacheMap().get(key);
 		Object obj = getSession().getAttribute(key);
 		return obj == null ? defaultValue : obj;
 	}
 
 	public static void putCache(String key, Object value) {
-		// getCacheMap().put(key, value);
 		getSession().setAttribute(key, value);
 	}
 
 	public static void removeCache(String key) {
-		// getCacheMap().remove(key);
 		getSession().removeAttribute(key);
 	}
-
-	// public static Map<String, Object> getCacheMap(){
-	// Principal principal = getPrincipal();
-	// if(principal!=null){
-	// return principal.getCacheMap();
-	// }
-	// return new HashMap<String, Object>();
-	// }
 
 }

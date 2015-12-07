@@ -7,7 +7,7 @@
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path;
-	String login = basePath + "/";
+	String bpath = basePath + "/";
 	String cssPath = basePath + "/" + "static/css/";
 	String jsPath = basePath + "/" + "static/js/";
 	String imgPath = basePath + "/" + "static/img/";

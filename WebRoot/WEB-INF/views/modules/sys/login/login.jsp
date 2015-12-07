@@ -17,7 +17,7 @@
 				<!-- <img src="../../img/login/test/head_120.png" alt=""> -->
 			</div>
 		</div>
-		<form class="form form-signin" method="post" action="<%=login%>login">
+		<form class="form form-signin" method="post" action="<%=bpath%>login">
 			<input value="test" name="username" type="text" class="form-control" placeholder="用户名" required  />
 			<input value="123456" name="password" type="password" class="form-control" placeholder="密码" required />
 			<input type="submit" class="btn btn-yellow" value="登录">

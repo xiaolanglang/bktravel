@@ -1,8 +1,5 @@
 package com.bktravel.sys.account.entity;
 
-import java.util.List;
-
-import com.bktravel.sys.role.entity.Role;
 import com.bkweb.common.entity.DataEntity;
 
 /**
@@ -20,7 +17,6 @@ public class Account extends DataEntity<Account> {
 	private String username;
 	private String password;
 	private String loginFlag;
-	private List<Role> roleList;
 	private boolean isAdmin;
 
 	// Constructors
@@ -54,14 +50,6 @@ public class Account extends DataEntity<Account> {
 		this.password = password;
 	}
 
-	public List<Role> getRoleList() {
-		return roleList;
-	}
-
-	public void setRoleList(List<Role> roleList) {
-		this.roleList = roleList;
-	}
-
 	public String getLoginFlag() {
 		return loginFlag;
 	}
@@ -71,7 +59,10 @@ public class Account extends DataEntity<Account> {
 	}
 
 	public boolean isAdmin() {
-		return isAdmin;
+		if ("admin".equals(username)) {
+			return true;
+		}
+		return false;
 	}
 
 	public void setAdmin(boolean isAdmin) {

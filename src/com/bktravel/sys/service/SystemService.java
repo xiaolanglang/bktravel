@@ -1,5 +1,7 @@
 package com.bktravel.sys.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -7,7 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.bktravel.common.utils.AccountUtils;
 import com.bktravel.sys.account.dao.AccountDao;
 import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.role.dao.RoleDao;
+import com.bktravel.sys.purview.dao.AccountRoleDao;
+import com.bktravel.sys.purview.dao.PermissionsDao;
+import com.bktravel.sys.purview.dao.RoleDao;
+import com.bktravel.sys.purview.dao.RolePermissionsDao;
+import com.bktravel.sys.purview.entity.Permissions;
+import com.bktravel.sys.purview.entity.Role;
 import com.bktravel.sys.security.SystemAuthorizingRealm;
 import com.bkweb.common.security.shiro.session.SessionDAO;
 import com.bkweb.common.service.BaseService;
@@ -26,8 +33,12 @@ public class SystemService extends BaseService {
 	private AccountDao accountDao;
 	@Autowired
 	private RoleDao roleDao;
-	// @Autowired
-	// private MenuDao menuDao;
+	@Autowired
+	private RolePermissionsDao rolePerDao;
+	@Autowired
+	private AccountRoleDao accountRoleDao;
+	@Autowired
+	private PermissionsDao permissionsDao;
 	@Autowired
 	private SessionDAO sessionDao;
 	@Autowired
@@ -78,4 +89,46 @@ public class SystemService extends BaseService {
 		return AccountUtils.getByUsername(loginName);
 	}
 
+	// -- permissions -- //
+
+	/**
+	 * 找出所有的权限
+	 * 
+	 * @param permissions
+	 * @return
+	 */
+	public List<Permissions> findAllPermissionsList() {
+		return permissionsDao.findAllList(Permissions.class, false);
+	}
+
+	/**
+	 * 根据账户找到对应权限
+	 * 
+	 * @param account
+	 * @return
+	 */
+	public List<Permissions> findPermissionsByAccount(Account account) {
+		return permissionsDao.getPermissionsByAccount(account);
+	}
+
+	// -- role -- //
+
+	/**
+	 * 找到所有角色
+	 * 
+	 * @return
+	 */
+	public List<Role> findAllRoleList() {
+		return roleDao.findAllList(Role.class, false);
+	}
+
+	/**
+	 * 根据账户找到角色
+	 * 
+	 * @param accountRole
+	 * @return
+	 */
+	public List<Role> findRoleListByAccount(Account account) {
+		return roleDao.findRoleListByAccount(account);
+	}
 }
