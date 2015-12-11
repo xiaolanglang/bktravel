@@ -58,5 +58,5 @@
 		</div>
 	</div>
 </body>
-<%-- <script type="text/javascript" src="<%=jsPath%>common/requirejs_2.1.11.js" data-main="<%=jsPath%>modules/home/main.js"></script> --%>
+<%@include file="/WEB-INF/views/include/js.jsp"%>
 </html>

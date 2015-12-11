@@ -49,4 +49,5 @@
 		</div>
 	</div>
 </body>
+<%@include file="/WEB-INF/views/include/js.jsp"%>
 </html>

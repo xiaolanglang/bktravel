@@ -1,7 +1,5 @@
 require.config({
-	paths : {
-		"jquery" : [ bk.getJsPath() + "common/jquery_1.7.2" ]
-	},
+	paths : bk.getPaths(),
 	// 禁止缓存
 	"urlArgs" : "bust=" + (new Date()).getTime()
 });
@@ -9,7 +7,7 @@ require.config({
 require.config({
 	paths : {
 		"treemenu" : [ bk.getJsPath() + "modules/home/treemenu" ],
-		"jerichotab" : [ bk.getJsPath() + "common/jquery.jerichotab" ],
+		"jerichotab" : [ bk.getJsPath() + "common/jerichotab/jquery.jerichotab" ],
 		"index" : [ bk.getJsPath() + "modules/home/index" ]
 	},
 	shim : {

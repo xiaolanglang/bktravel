@@ -9,7 +9,7 @@ require.config({
 
 require.config({
 	paths : {
-		"slides" : [ bk.getJsPath() + "common/jquery.slides" ]
+		"slides" : [ bk.getJsPath() + "common/slides/jquery.slides" ]
 	},
 	shim : {
 		'slides' : {

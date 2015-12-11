@@ -39,7 +39,7 @@ IMPORT文件，通用导入功能
 .content { width: 100%; margin-top: 50px; position: relative; }
 
 /********left开始****ps:主要就是树状机构*******/
-.content-left { background-color: #2E363F; height: 100%; width: 185px; overflow: hidden; position: absolute; }
+.content-left { background-color: #2E363F; height: 100%; width: 185px; overflow-y: auto; position: absolute; }
 
 #openClose { width: 100%; height: 15px; background-color: #394555; cursor: pointer; }
 
@@ -48,7 +48,7 @@ IMPORT文件，通用导入功能
 
 .close .openClose div { height: 2px; width: 10px; margin-bottom: 2px; margin-left: 2px; float: none; }
 
-.content-left-menu { clear: both; width: 185px; }
+.content-left-menu { clear: both; width: 100%; }
 .content-left-menu li { position: relative; background-color: #2E363F; }
 .content-left-menu li a { color: #939DA8; position: relative; }
 .content-left-menu li a:hover { background-color: #6E849E; color: white; }

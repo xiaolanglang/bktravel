@@ -8,7 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/common/content-right-save.css">
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>common/stepBar.css">
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/tourism/tourism/img_info/img_info.css">
-	<script type="text/javascript" src="<%=jsPath%>common/jquery.stepBar.js"></script>
 </head>
 <body ng-controller="AppController">
 	<div class="contents">
@@ -28,11 +27,13 @@
 		<a href="<%=basePath %>tourismDetail/save_detail/${requestScope.tourism.id}" class="btn btn-primary col-push-1">下一步</a>
 	</div>
 </body>
-<script type="text/javascript" src="<%=jsPath%>common/requirejs_2.1.11.js" 
-		data-main="<%=jsPath %>modules/tourism/tourism/img_info/main.js"></script>
+<%@include file="/WEB-INF/views/include/js.jsp"%>
+<script type="text/javascript" src="<%=jsPath%>common/stepbar/jquery.stepBar.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#stepBar").stepBarInit({step:3});
 	})
 </script>
+<script type="text/javascript" src="<%=jsPath%>common/requirejs_2.1.11.js" 
+		data-main="<%=jsPath %>modules/tourism/tourism/img_info/main.js"></script>
 </html>

@@ -277,6 +277,6 @@
 	</div>
 </body>
 	<script type="text/javascript" src="<%=jsPath%>modules/common/bk.js"></script>
-	<script type="text/javascript" src="<%=jsPath%>common/requirejs_2.1.11.js"
+	<script type="text/javascript" src="<%=jsPath%>common/requirejs/requirejs_2.1.11.js"
 	data-main="<%=jsPath%>modules/home/main.js"></script>
 </html>

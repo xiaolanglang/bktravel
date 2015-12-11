@@ -8,12 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>common/jquery.slides.css">
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/common/content-right-save.css">
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>common/stepBar.css">
-	<script type="text/javascript" src="<%=jsPath%>common/jquery.stepBar.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("#stepBar").stepBarInit({step:4});
-		});
-	</script>
 </head>
 <body>
 	<div class="contents">
@@ -76,6 +70,13 @@
 		</div>
 	</div>
 </body>
+<%@include file="/WEB-INF/views/include/js.jsp"%>
+<script type="text/javascript" src="<%=jsPath%>common/stepbar/jquery.stepBar.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#stepBar").stepBarInit({step:4});
+	});
+</script>
 <script type="text/javascript" src="<%=jsPath%>common/requirejs_2.1.11.js" 
 		data-main="<%=jsPath %>modules/tourism/tourism/img_route/main.js"></script>
 </html>

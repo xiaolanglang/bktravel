@@ -7,12 +7,6 @@
 	<title>线路操作</title>
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/common/content-right-save.css">
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>common/stepBar.css">
-	<script type="text/javascript" src="<%=jsPath%>common/jquery.stepBar.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("#stepBar").stepBarInit({step:2});
-		})
-	</script>
 </head>
 <body>
 	<div class="contents">
@@ -67,4 +61,11 @@
 		</div>
 	</div>
 </body>
+<%@include file="/WEB-INF/views/include/js.jsp"%>
+<script type="text/javascript" src="<%=jsPath%>common/stepbar/jquery.stepBar.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#stepBar").stepBarInit({step:2});
+	})
+</script>
 </html>

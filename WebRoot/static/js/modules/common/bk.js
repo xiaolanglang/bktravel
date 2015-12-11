@@ -166,9 +166,9 @@
 		getPaths : function() {
 			var jsPath = mj.getJsPath();
 			return {
-				"jquery" : [ jsPath + "common/jquery_1.7.2" ],
-				"angular" : [ jsPath + "common/angular" ],
-				"ui-router" : [ jsPath + "common/angular-ui-router" ]
+				"jquery" : [ jsPath + "common/jquery/jquery_1.7.2" ],
+				"angular" : [ jsPath + "common/angularjs/angular" ],
+				"ui-router" : [ jsPath + "common/angularjs/angular-ui-router" ]
 			};
 		},
 		shim : {
