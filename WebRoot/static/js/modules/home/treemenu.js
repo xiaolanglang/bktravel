@@ -1,5 +1,4 @@
 (function($) {
-	var jq = $;
 
 	var checkMove = function(obj) {
 		if (!obj.next().is("ul")) {
@@ -13,39 +12,43 @@
 	}
 
 	var createTree = function() {
-		jq(this).on("click", "a[class^=menu-father]", function() {
-			if (jq(this).hasClass("menu-open")) { //打开
-				//防止重复
-				if (checkMove(jq(this))) {
-					return;
-				}
+		$(this).on("click", "a[class^=menu-father]", function() {
+			$(this).next().stop(true);
+			if ($(this).hasClass("menu-open")) { //关闭
 				//改变图标
-				jq(this).find("span:last-child").removeClass("icon-circle-down").addClass("icon-circle-up");
+				$(this).removeClass("menu-open");
+				$(this).find("span:last-child").removeClass("icon-circle-down").addClass("icon-circle-up");
 				//下拉效果
-				jq(this).removeClass("menu-open").addClass("move-on").next().slideToggle("normal", function() {
-					jq(this).prev().removeClass("move-on")
-				});
+				$(this).next().slideToggle("fast");
 
-			} else { //关闭
-				if (checkMove(jq(this))) {
-					return;
+			} else { //打开
+				// 关闭上一个
+				if ($(this).parent().parent().attr("id") === "content-left-menu") {
+					$("#content-left-menu > li > a.menu-open").click();
 				}
-				jq(this).find("span:last-child").removeClass("icon-circle-up").addClass("icon-circle-down");
-				jq(this).addClass("menu-open move-on").next().slideToggle("normal", function() {
-					jq(this).prev().removeClass("move-on")
-				});
+				$(this).addClass("menu-open");
+				$(this).find("span:last-child").removeClass("icon-circle-up").addClass("icon-circle-down");
+				$(this).next().slideToggle("fast");
 			}
 		})
 
-		jq(this).on("click","a[class^=func]",function(event){
-			jq(event.delegateTarget).find("a[class^=func]").css("background-color","");
-			jq(this).css("background-color","#0099CC");
+		$(this).on("click", "a[class^=func]", function(event) {
+			var style = {
+				"background-color": "#0099CC",
+				"color": "#FFF1F8"
+			};
+			var nostyle = {
+				"background-color": "",
+				"color": ""
+			};
+			$(event.delegateTarget).find("a[class^=func]").css(nostyle);
+			$(this).css(style);
 		})
 
 		return this;
 	}
 
-	jq.fn.extend({
+	$.fn.extend({
 		bkCreateTree: createTree
 	});
 

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/home/jquery.jerichotab.css">
 </head>
 <body>
-	<div class="head">
+	<div class="head" id="header">
 		<div class="head-left">
 			<div class="log">
 				<img src="<%=imgPath%>logo.png"></div>
@@ -18,14 +18,15 @@
 		</div>
 		<div class="head-right">
 			<div class="user-img">
-				<img src="<%=imgPath%>logo.png"></div>
+				<!-- <img src="../../img/logo.png" alt="" class="round"> -->
+				<span class="glyphicon glyphicon-user round"></span>
+			</div>
 			<div class="user-msg">
 				<span id="user-msg">
 					系统管理员
-					<div class="img"></div>
 				</span>
 				<div class="user-msg-menu" id="user-msg-dropmenu">
-					<ul class="dropdown-menu">
+					<ul class="dropdown-menu" >
 						<li>
 							<a href="<%=bpath %>loginout">退出</a>
 						</li>
@@ -42,6 +43,13 @@
 	</div>
 	<div class="content">
 		<div class="content-left">
+			<div id="openClose">
+				<div class="openClose">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
 			<ul class="nav content-left-menu" id="content-left-menu">
 				<li>
 					<a href="javascript:void(0)" class="menu-father">
@@ -107,7 +115,6 @@
 					<ul>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe'
-							iconImg='<%=imgPath%>jerichotab/user.gif'
 							dataLink='<%=basePath %>attraction/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">景点</span>
@@ -125,7 +132,6 @@
 					<ul>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe'
-							iconImg='<%=imgPath%>jerichotab/user.gif'
 							dataLink='<%=basePath %>startPlace/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">出发地</span>
@@ -134,7 +140,6 @@
 						</li>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe'
-							iconImg='<%=imgPath%>jerichotab/user.gif'
 							dataLink='<%=basePath %>tourismType/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">旅游线路类型</span>
@@ -143,7 +148,6 @@
 						</li>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe'
-							iconImg='<%=imgPath%>jerichotab/user.gif'
 							dataLink='<%=basePath %>tourism/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">旅游线路</span>
@@ -191,7 +195,6 @@
 					<ul>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe'
-							iconImg='<%=imgPath%>jerichotab/user.gif'
 							dataLink='<%=basePath %>continent/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">地域</span>
@@ -200,8 +203,7 @@
 						</li>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe'
-							dataLink='<%=basePath %>nation/list'
-							iconImg='<%=imgPath%>jerichotab/user.gif'>
+							dataLink='<%=basePath %>nation/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">国家</span>
 								<span class="font-ico"></span>
@@ -209,8 +211,7 @@
 						</li>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe' 
-							dataLink='<%=basePath %>province/list'
-							iconImg='<%=imgPath%>jerichotab/user.gif'>
+							dataLink='<%=basePath %>province/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">省会</span>
 								<span class="font-ico"></span>
@@ -218,8 +219,7 @@
 						</li>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe' 
-							dataLink='<%=basePath %>city/list'
-							iconImg='<%=imgPath%>jerichotab/user.gif'>
+							dataLink='<%=basePath %>city/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">城市</span>
 								<span class="font-ico"></span>
@@ -227,8 +227,7 @@
 						</li>
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe' 
-							dataLink='<%=basePath %>country/list'
-							iconImg='<%=imgPath%>jerichotab/user.gif'>
+							dataLink='<%=basePath %>country/list'>
 								<span class="icon-cloud font-ico"></span>
 								<span class="msg">县</span>
 								<span class="font-ico"></span>
@@ -245,8 +244,7 @@
 					<ul class="nav">
 						<li>
 							<a href="javascript:void(0)" class="func" dataType='iframe' 
-							dataLink='<%=basePath %>dict/list'
-							iconImg='<%=imgPath%>jerichotab/user.gif'>
+							dataLink='<%=basePath %>dict/list'>
 								<span class="icon-menu font-ico"></span>
 								<span class="msg">基础数据管理</span>
 								<span class="font-ico"></span>
@@ -270,9 +268,13 @@
 				</li>
 			</ul>
 		</div>
-		<div class="content-right" id="content-right"></div>
+		<div id="content-right" class="content-right">
+			<iframe id="mainFrame" name="mainFrame" src="" style="overflow:visible;" scrolling="yes" frameborder="no" width="100%" height="650"></iframe>
+		</div>
 	</div>
-	<div class="footer"></div>
+	<div class="footer" id="footer">
+		Created By gitHub-XiaoLangLang @2015-1-1
+	</div>
 </body>
 	<script type="text/javascript" src="<%=jsPath%>modules/common/bk.js"></script>
 	<script type="text/javascript" src="<%=jsPath%>common/requirejs_2.1.11.js"
