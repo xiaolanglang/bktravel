@@ -273,9 +273,10 @@
 		</div>
 	</div>
 	<div class="footer" id="footer">
-		Created By gitHub-XiaoLangLang @2015-1-1
+		Created By gitHub-XiaoLangLang @2015-1-1  <a id="test">asdsdasd</a>
 	</div>
 </body>
+	<%@include file="/WEB-INF/views/include/js.jsp"%>
 	<script type="text/javascript" src="<%=jsPath%>modules/common/bk.js"></script>
 	<script type="text/javascript" src="<%=jsPath%>common/requirejs/requirejs_2.1.11.js"
 	data-main="<%=jsPath%>modules/home/main.js"></script>

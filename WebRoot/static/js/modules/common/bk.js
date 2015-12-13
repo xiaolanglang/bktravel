@@ -166,7 +166,7 @@
 		getPaths : function() {
 			var jsPath = mj.getJsPath();
 			return {
-				"jquery" : [ jsPath + "common/jquery/jquery_1.7.2" ],
+				"jquery" : [ jsPath + "common/jquery/jquery_1.11" ],
 				"angular" : [ jsPath + "common/angularjs/angular" ],
 				"ui-router" : [ jsPath + "common/angularjs/angular-ui-router" ]
 			};

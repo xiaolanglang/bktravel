@@ -28,9 +28,20 @@
 				<label class="forget">
 					<a href="##">忘记密码？</a>
 				</label>
-			</div>		
+			</div>
+			<a id="myModal">Click me to open a modal window!</a>
 		</form>
 	</div>
 </body>
 <%@include file="/WEB-INF/views/include/js.jsp"%>
+<script type="text/javascript">
+$(function(){
+	
+	new jBox("Notice",{
+	    content: 'This is my modal wind121212ow',
+	    trigger:"click",
+	    delayClose:1
+	});
+})
+</script>
 </html>
