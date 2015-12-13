@@ -8,6 +8,6 @@
         </dependent-module>
         <property name="java-output-path" value="/bktravel/WebRoot/WEB-INF/classes"/>
         <property name="context-root" value="/bktravel"/>
-        <property name="me-merge-utility-modules" value="true"/>
+        <property name="me-merge-utility-modules" value="false"/>
     </wb-module>
 </project-modules>
