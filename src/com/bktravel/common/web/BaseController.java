@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 public class BaseController {
 	@Autowired
@@ -57,5 +58,18 @@ public class BaseController {
 			sb.append(message).append(messages.length > 1 ? "<br/>" : "");
 		}
 		model.addAttribute("message", sb.toString());
+	}
+
+	/**
+	 * 添加RedirectAttributes消息
+	 * 
+	 * @param message
+	 */
+	protected void addRedirectMessage(RedirectAttributes attributes, String... messages) {
+		StringBuilder sb = new StringBuilder();
+		for (String message : messages) {
+			sb.append(message).append(messages.length > 1 ? "<br/>" : "");
+		}
+		attributes.addFlashAttribute("message", sb.toString());
 	}
 }
