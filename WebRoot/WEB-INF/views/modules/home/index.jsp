@@ -247,7 +247,7 @@
 							<a href="javascript:void(0)" class="func" dataType='iframe' 
 							dataLink='<%=basePath %>dict/list'>
 								<span class="icon-menu font-ico"></span>
-								<span class="msg">基础数据管理</span>
+								<span class="msg">字典管理</span>
 								<span class="font-ico"></span>
 							</a>
 						</li>
@@ -260,11 +260,45 @@
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void(0)" class="func">
-								<span class="icon-cloud font-ico"></span>
-								<span class="msg">菜单</span>
-								<span class="font-ico"></span>
+							<a href="javascript:void(0)" class="menu-father">
+								<span class="icon-menu font-ico"></span>
+								<span class="msg">授权管理</span>
+								<span class="icon-circle-up font-ico"></span>
 							</a>
+							<ul class="nav">
+								<li>
+									<a href="javascript:void(0)" class="func" dataType='iframe' 
+							dataLink='<%=basePath %>permissions/list'>
+										<span class="icon-cloud font-ico"></span>
+										<span class="msg">权限管理</span>
+										<span class="font-ico"></span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)" class="func" dataType='iframe' 
+							dataLink='<%=basePath %>role/list'>
+										<span class="icon-cloud font-ico"></span>
+										<span class="msg">角色管理</span>
+										<span class="font-ico"></span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)" class="func" dataType='iframe' 
+							dataLink='<%=basePath %>rolepermission/list'>
+										<span class="icon-cloud font-ico"></span>
+										<span class="msg">角色权限管理</span>
+										<span class="font-ico"></span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)" class="func" dataType='iframe' 
+							dataLink='<%=basePath %>accountrole/list'>
+										<span class="icon-cloud font-ico"></span>
+										<span class="msg">账户角色管理</span>
+										<span class="font-ico"></span>
+									</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</li>

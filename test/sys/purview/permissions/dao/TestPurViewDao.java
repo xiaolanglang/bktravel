@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
 import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.purview.dao.PermissionsDao;
-import com.bktravel.sys.purview.entity.Permissions;
+import com.bktravel.sys.authority.dao.PermissionsDao;
+import com.bktravel.sys.authority.entity.Permissions;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/spring-*.xml" })

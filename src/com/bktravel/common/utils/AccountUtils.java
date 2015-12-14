@@ -12,9 +12,9 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
 import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.purview.entity.AccountRole;
-import com.bktravel.sys.purview.entity.Permissions;
-import com.bktravel.sys.purview.entity.Role;
+import com.bktravel.sys.authority.entity.AccountRole;
+import com.bktravel.sys.authority.entity.Permissions;
+import com.bktravel.sys.authority.entity.Role;
 import com.bktravel.sys.security.SystemAuthorizingRealm.Principal;
 import com.bktravel.sys.service.SystemService;
 import com.bkweb.common.utils.CacheUtils;
