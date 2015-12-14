@@ -28,4 +28,7 @@
 	<table name="travel_route" catalog="itravel" class="com.bkweb.modules.tourism.entity.Tourism"></table>
 	<table name="base_dicionary" catalog="itravel" class="com.bkweb.sys.dict.entity.Dictionary"></table>
 	<table name="travel_img" catalog="itravel" class="com.bkweb.modules.tourism.entity.TourismImg"></table>
+	<table name="bk_userinfo" catalog="itravel">
+		<column name="birthday" type="java.util.Date"></column>
+	</table>
 </hibernate-reverse-engineering>

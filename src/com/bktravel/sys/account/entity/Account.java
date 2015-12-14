@@ -8,8 +8,6 @@ import com.bkweb.common.entity.DataEntity;
 
 public class Account extends DataEntity<Account> {
 
-	// Fields
-
 	/**
 	 * 
 	 */
@@ -17,7 +15,6 @@ public class Account extends DataEntity<Account> {
 	private String username;
 	private String password;
 	private String loginFlag;
-	private boolean isAdmin;
 
 	// Constructors
 
@@ -63,10 +60,6 @@ public class Account extends DataEntity<Account> {
 			return true;
 		}
 		return false;
-	}
-
-	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = isAdmin;
 	}
 
 }

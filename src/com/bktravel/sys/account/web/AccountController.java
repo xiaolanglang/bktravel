@@ -1,20 +1,20 @@
 package com.bktravel.sys.account.web;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.bktravel.common.utils.AccountUtils;
 import com.bktravel.common.web.BaseController;
 import com.bktravel.sys.account.entity.Account;
 import com.bktravel.sys.account.service.AccountService;
-import com.bktravel.sys.security.SystemAuthorizingRealm.Principal;
+import com.bktravel.sys.user.entity.User;
+import com.bktravel.sys.user.service.UserService;
+import com.bkweb.common.utils.Encodes;
+import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 
 /**
@@ -24,43 +24,54 @@ import com.bkweb.common.utils.hibernatepage.HPage;
  * @version 2015-6-19
  */
 @Controller
-@RequestMapping({ "${adminPath}/account", "" })
+@RequestMapping("${adminPath}/account")
 public class AccountController extends BaseController {
 
 	@Autowired
 	private AccountService accountService;
 
+	@Autowired
+	private UserService userService;
+
 	@RequestMapping("list")
-	public String findbkAccountList(Account account, int pageNum, HttpServletRequest request) {
-		List<Account> list = accountService.findPageList(account, true, new HPage<Account>(pageNum));
-		request.setAttribute("userList", list);
-		return "bkAccount/bkAccountList";
+	public String findbkAccountList(User user, Integer pageNum, Model model) {
+		HPage<User> page = new HPage<User>(pageNum);
+		userService.findPageList(user, true, page, "account");
+		model.addAttribute("page", page);
+		return "sys/account/list";
 	}
 
-	@RequestMapping("")
-	public String index(HttpSession session) {
-		Principal principal = AccountUtils.getPrincipal();
-		// 如果已经登录，则跳转到管理首页
-		if (principal != null && !principal.isMobileLogin()) {
-			return "home/index";
+	@RequestMapping("save")
+	public String save(User user, RedirectAttributes attributes) {
+		Account account = user.getAccount();
+		String password = Encodes.getMD5Password(account.getUsername(), account.getPassword());
+		account.setPassword(password);
+		accountService.saveOrUpdate(account);
+		user.setBirthday(new Date());
+		userService.saveOrUpdate(user);
+		addRedirectMessage(attributes, "保存账户成功");
+		return "redirect:" + adminPath + "/account/list";
+	}
+
+	@RequestMapping("edit")
+	public String edit(User user, Model model) {
+		if (user != null && !StringUtils.isEmpty(user.getId())) {
+			user = userService.get(user);
 		}
-		return "sys/login/login";
+
+		model.addAttribute("user", user);
+		return "sys/account/save";
 	}
 
-	/**
-	 * 登录失败之后进入的方法
-	 * 
-	 * @param account
-	 * @return
-	 */
-	@RequestMapping(value = "login")
-	public String login(Account account, RedirectAttributes attributes) {
-		return "redirect:/";
-	}
-
-	@RequestMapping("loginout")
-	public String loginout(HttpSession session) {
-		session.invalidate();
-		return "redirect:/";
+	@RequestMapping("del")
+	public String delete(User user, RedirectAttributes attributes) {
+		user = userService.get(user);
+		Account account = user.getAccount();
+		userService.trueDelete(user);
+		if (account != null) {
+			accountService.trueDelete(account);
+		}
+		addRedirectMessage(attributes, "删除账户成功");
+		return "redirect:" + adminPath + "/account/list";
 	}
 }

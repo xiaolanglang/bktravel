@@ -12,19 +12,19 @@
 			<column name="accountId" length="32" />
 		</many-to-one>
 		<property name="name" type="java.lang.String">
-			<column name="name" length="20" not-null="true" />
+			<column name="name" length="20" />
 		</property>
 		<property name="sex" type="java.lang.String">
-			<column name="sex" length="2" not-null="true" />
+			<column name="sex" length="2" />
 		</property>
 		<property name="age" type="java.lang.Integer">
-			<column name="age" not-null="true" />
+			<column name="age" />
 		</property>
-		<property name="birthday" type="java.util.Date">
-			<column name="birthday" length="19" not-null="true" />
+		<property name="birthday" type="java.util.Date" >
+			<column name="birthday" length="19" />
 		</property>
 		<property name="card" type="java.lang.String">
-			<column name="card" length="20" not-null="true" />
+			<column name="card" length="20" />
 		</property>
 	</class>
 </hibernate-mapping>

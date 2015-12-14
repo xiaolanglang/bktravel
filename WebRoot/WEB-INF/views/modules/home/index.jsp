@@ -159,14 +159,15 @@
 				<li>
 					<a href="javascript:void(0)" class="menu-father">
 						<span class="icon-list2 font-ico"></span>
-						<span class="msg">管理菜单四</span>
+						<span class="msg">前台用户管理</span>
 						<span class="icon-circle-up font-ico"></span>
 					</a>
 					<ul>
 						<li>
-							<a href="javascript:void(0)" class="func">
+							<a href="javascript:void(0)" class="func" dataType='iframe' 
+							dataLink='<%=basePath %>dict/list'>
 								<span class="icon-cloud font-ico"></span>
-								<span class="msg">二级菜单</span>
+								<span class="msg">用户管理</span>
 								<span class="font-ico"></span>
 							</a>
 						</li>
@@ -251,16 +252,17 @@
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void(0)" class="func">
+							<a href="javascript:void(0)" class="func" dataType='iframe' 
+							dataLink='<%=basePath %>account/list'>
 								<span class="icon-cloud font-ico"></span>
-								<span class="msg">二级菜单</span>
+								<span class="msg">账户管理</span>
 								<span class="font-ico"></span>
 							</a>
 						</li>
 						<li>
 							<a href="javascript:void(0)" class="func">
 								<span class="icon-cloud font-ico"></span>
-								<span class="msg">二级菜单</span>
+								<span class="msg">菜单</span>
 								<span class="font-ico"></span>
 							</a>
 						</li>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	出错啦:500错误
+	来自shiro的500错误
 </body>
 </html>

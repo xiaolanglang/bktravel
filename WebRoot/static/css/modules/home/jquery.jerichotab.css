@@ -24,7 +24,7 @@
 .jericho_tab .tab_pages .jericho_tabs .tab_left .tab_icon {width:25px;text-align:right;background-repeat:no-repeat;}
 .jericho_tab .tab_pages .tab_selected .tab_left .tab_icon {background-position:right 7px;}
 .jericho_tab .tab_pages .tab_unselect .tab_left .tab_icon {background-position:right center;}
-.jericho_tab .tab_pages .jericho_tabs .tab_left .tab_text {text-align:center;text-indent:2px;width:100px;}
+.jericho_tab .tab_pages .jericho_tabs .tab_left .tab_text {text-align:center;text-indent:2px;width:100px;font-size: 13px}
 .jericho_tab .tab_pages .jericho_tabs .tab_left .tab_close {/*width:20px;*/text-align:center;}
 .jericho_tab .tab_pages .jericho_tabs .tab_left .tab_close a {width:11px;height:11px;display:block;overflow:hidden;text-decoration:none;}
 .jericho_tab .tab_pages .tab_selected .tab_left .tab_close a {background:url(../../../img/jerichotab/jerichoclose.gif) center -11px no-repeat;margin-top:8px;}
