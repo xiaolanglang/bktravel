@@ -6,8 +6,7 @@
         <dependent-module archiveName="InfrastructureProjects.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/InfrastructureProjects/InfrastructureProjects">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="java-output-path" value="/bktravel/WebRoot/WEB-INF/classes"/>
         <property name="context-root" value="/bktravel"/>
-        <property name="me-merge-utility-modules" value="false"/>
+        <property name="java-output-path" value="/bktravel/WebRoot/WEB-INF/classes"/>
     </wb-module>
 </project-modules>
