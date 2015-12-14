@@ -9,6 +9,12 @@
 </head>
 <body>
 	<div class="contents">
+		<ol class="breadcrumb lan">
+			<li>
+				<a href="<%=basePath %>role/list">角色列表</a>
+			</li>
+			<li class="active">权限列表</li>
+		</ol>
 		<ul class="nav-tabs nav">
 			<li class="active">
 				<a>区域列表</a>

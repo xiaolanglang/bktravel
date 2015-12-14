@@ -10,8 +10,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bktravel.common.web.BaseController;
 import com.bktravel.sys.account.entity.Account;
 import com.bktravel.sys.authority.entity.AccountRole;
+import com.bktravel.sys.authority.entity.Role;
 import com.bktravel.sys.authority.service.AccountRoleService;
-import com.bkweb.common.utils.StringUtils;
+import com.bktravel.sys.authority.service.RoleService;
 import com.bkweb.common.utils.hibernatepage.HPage;
 
 @Controller
@@ -19,6 +20,9 @@ import com.bkweb.common.utils.hibernatepage.HPage;
 public class AccountRoleController extends BaseController {
 	@Autowired
 	private AccountRoleService actRoleService;
+
+	@Autowired
+	private RoleService roleService;
 
 	@RequestMapping("list/{accountId}")
 	public String findList(@PathVariable String accountId, AccountRole accountRole, Integer pageNum, Model model) {
@@ -33,16 +37,15 @@ public class AccountRoleController extends BaseController {
 	public String save(@PathVariable String accountId, AccountRole accountRole, RedirectAttributes attributes) {
 		actRoleService.saveOrUpdate(accountRole);
 		addRedirectMessage(attributes, "保存账户角色成功");
-		return "redirect:" + adminPath + "/accountrole/list";
+		return "redirect:" + adminPath + "/accountrole/list/" + accountId;
 	}
 
 	@RequestMapping("edit/{accountId}")
-	public String edit(@PathVariable String accountId, AccountRole accountRole, Model model) {
-		if (accountRole != null && !StringUtils.isEmpty(accountRole.getId())) {
-			accountRole = actRoleService.get(accountRole);
-		}
-
+	public String edit(@PathVariable String accountId, Model model) {
+		AccountRole accountRole = new AccountRole();
+		accountRole.setAccount(new Account(accountId));
 		model.addAttribute("accountRole", accountRole);
+		model.addAttribute("roleList", roleService.findAllList(Role.class, true));
 		return "sys/authority/accountrole/save";
 	}
 
@@ -50,6 +53,6 @@ public class AccountRoleController extends BaseController {
 	public String delete(@PathVariable String accountId, AccountRole accountRole, RedirectAttributes attributes) {
 		actRoleService.trueDelete(accountRole);
 		addRedirectMessage(attributes, "删除账户角色成功");
-		return "redirect:" + adminPath + "/accountrole/list";
+		return "redirect:" + adminPath + "/accountrole/list/" + accountId;
 	}
 }

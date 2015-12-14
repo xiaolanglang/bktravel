@@ -19,21 +19,21 @@
 		</ol>
 		<ul class="nav-tabs nav">
 			<li>
-				<a href="<%=basePath%>dict/list">区域列表</a>
+				<a href="<%=basePath%>accountrole/list/${accountRole.account.id}">区域列表</a>
 			</li>
 			<li class="active">
 				<a>${not empty dictionary.id?'修改':'添加'}信息</a>
 			</li>
 		</ul>
 		<div class="container saveform">
-			<form:form action="${basePath }dict/save/${accountRole.account.id}" modelAttribute="accountRole" class="form-horizontal">
-				<form:hidden path="id"/>
+			<form:form action="${basePath }accountrole/save/${accountRole.account.id}" modelAttribute="accountRole" class="form-horizontal">
+				<form:hidden path="account.id"/>
 				<div class="form-group row">
 					<label class="control-label col-2">类型</label>
 					<div class="col-8">
 						<form:select path="role.id" class="select2" >
 							<form:option value="" label=""/>
-							<form:options items="${requestScope.permissionsList }" itemLabel="name" itemValue="id"/>
+							<form:options items="${requestScope.roleList }" itemLabel="name" itemValue="id"/>
 						</form:select>
 					</div>
 				</div>

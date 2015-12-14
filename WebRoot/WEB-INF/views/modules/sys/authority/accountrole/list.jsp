@@ -51,10 +51,9 @@
 					<c:forEach items="${requestScope.page.list }" var="accountRole" varStatus="s">
 						<tr>
 							<td>${s.index+1 }</td>
-							<td>${role.name }</td>
+							<td>${accountRole.role.name }</td>
 							<td>
-								<a href="<%=basePath%>accountrole/edit/${account.id }?id=${accountRole.id}">修改</a>
-								<a href="<%=basePath%>accountrole/del/${account.id }?id=${accountRole.id}">删除</a>
+								<a href="<%=basePath%>accountrole/del/${accountRole.account.id }?id=${accountRole.id}">删除</a>
 							</td>
 						</tr>
 					</c:forEach>

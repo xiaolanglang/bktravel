@@ -117,6 +117,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 				}
 			}
 		}
+
 		Account account = systemService.getAccountByUsername(principal.getUsername());
 		if (account != null) {
 			SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();

@@ -21,8 +21,7 @@ public class NotFoundErrorFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
 			ServletException {
-		HttpServletRequest request = (HttpServletRequest) req;
-		System.out.println("请求:" + request.getRequestURL() + ",发生了404异常");
+		System.out.println("发生了404异常");
 		chain.doFilter(req, res);
 	}
 
