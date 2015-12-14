@@ -14,25 +14,16 @@
 				<a>区域列表</a>
 			</li>
 			<li>
-				<a href="<%=basePath%>dict/edit">添加信息</a>
+				<a href="<%=basePath%>rolepermission/edit/${rolePer.role.id }">添加信息</a>
 			</li>
 		</ul>
 		<div class="search">
-			<form:form class="form-horizontal" action="${basePath }dict/list" method="post" modelAttribute="dictionary" id="form">
+			<form:form class="form-horizontal" action="${basePath }rolepermission/list/${rolePer.role.id }" method="post" modelAttribute="rolePer" id="form">
 				<input type="hidden" id="pageNum" name="pageNum">
 				<div class="form-group">
-					<label class="control-label col-4">类型</label>
+					<label class="control-label col-4">权限名称</label>
 					<div class="col-7">
-						<form:select path="type" class="select2">
-							<form:option value=""></form:option>
-							<form:options items="${requestScope.types }" />
-						</form:select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-4">描述</label>
-					<div class="col-7">
-						<form:input path="description" class="form-control"  placeholder="描述"/>
+						<form:input path="permissions.name" class="form-control"  placeholder="权限名称"/>
 					</div>
 				</div>
 				<div class="form-group">
@@ -48,20 +39,17 @@
 				<table class="table table-hover table-border table-striped table-title">
 					<tr>
 						<th>序号</th>
-						<th>类型</th>
-						<th>标签</th>
-						<th>描述</th>
+						<th>角色名称</th>
+						<th>权限名称</th>
 						<th>操作</th>
 					</tr>
-					<c:forEach items="${requestScope.page.list }" var="dictionary" varStatus="s">
+					<c:forEach items="${requestScope.page.list }" var="rolePer" varStatus="s">
 						<tr>
 							<td>${s.index+1 }</td>
-							<td>${dictionary.type }</td>
-							<td>${dictionary.label }</td>
-							<td>${dictionary.description }</td>
+							<td>${rolePer.role.name }</td>
+							<td>${rolePer.permissions.name }</td>
 							<td>
-								<a href="<%=basePath%>dict/edit?id=${dictionary.id}">修改</a>
-								<a href="<%=basePath%>dict/del?id=${dictionary.id}">删除</a>
+								<a href="<%=basePath%>rolepermission/del/${rolePer.role.id}?id=${rolePer.id}">删除</a>
 							</td>
 						</tr>
 					</c:forEach>

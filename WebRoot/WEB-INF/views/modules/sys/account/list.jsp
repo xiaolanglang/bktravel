@@ -56,6 +56,7 @@
 							<td>${user.card }</td>
 							<td>
 								<a href="<%=basePath%>account/edit?id=${user.id}">修改</a>
+								<a href="<%=basePath%>accountrole/list/${user.account.id}">分配角色</a>
 								<a href="<%=basePath%>account/del?id=${user.id}">删除</a>
 							</td>
 						</tr>

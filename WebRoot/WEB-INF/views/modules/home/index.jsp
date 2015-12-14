@@ -282,22 +282,6 @@
 										<span class="font-ico"></span>
 									</a>
 								</li>
-								<li>
-									<a href="javascript:void(0)" class="func" dataType='iframe' 
-							dataLink='<%=basePath %>rolepermission/list'>
-										<span class="icon-cloud font-ico"></span>
-										<span class="msg">角色权限管理</span>
-										<span class="font-ico"></span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" class="func" dataType='iframe' 
-							dataLink='<%=basePath %>accountrole/list'>
-										<span class="icon-cloud font-ico"></span>
-										<span class="msg">账户角色管理</span>
-										<span class="font-ico"></span>
-									</a>
-								</li>
 							</ul>
 						</li>
 					</ul>

@@ -22,6 +22,10 @@ public class Role extends DataEntity<Role> {
 	public Role() {
 	}
 
+	public Role(String id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}

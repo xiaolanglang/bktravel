@@ -13,6 +13,7 @@ IMPORT
 html, body, .content { width: 100%; height: 100%; font-size: 13px;}
 
 .contents { padding-right: 10px; }
+.contents .lan{margin:10px 0px;}
 .contents .search { width: 100%; border-bottom: 1px solid #ccc; padding-bottom: 10px; padding-top: 20px;}
 .contents .saveform { padding-top:50px;}
 .form-group{padding-bottom: 10px;}

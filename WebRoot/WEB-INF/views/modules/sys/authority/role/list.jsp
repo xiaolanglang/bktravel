@@ -48,6 +48,7 @@
 							<td>${role.name }</td>
 							<td>
 								<a href="<%=basePath%>role/edit?id=${role.id}">修改</a>
+								<a href="<%=basePath%>rolepermission/list/${role.id}">分配权限</a>
 								<a href="<%=basePath%>role/del?id=${role.id}">删除</a>
 							</td>
 						</tr>

@@ -8,34 +8,33 @@
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/common/content-right-save.css"></head>
 <body>
 	<div class="contents">
+		<ol class="breadcrumb lan">
+			<li>
+				<a href="<%=basePath %>role/list">角色列表</a>
+			</li>
+			<li>
+				<a href="<%=basePath %>rolepermission/list/${rolePer.role.id}">权限列表</a>
+			</li>
+			<li class="active">添加权限</li>
+		</ol>
 		<ul class="nav-tabs nav">
 			<li>
-				<a href="<%=basePath%>dict/list">区域列表</a>
+				<a href="<%=basePath%>rolepermission/list/${rolePer.role.id}">区域列表</a>
 			</li>
 			<li class="active">
 				<a>${not empty dictionary.id?'修改':'添加'}信息</a>
 			</li>
 		</ul>
 		<div class="container saveform">
-			<form:form action="${basePath }dict/save" modelAttribute="dictionary" class="form-horizontal">
-				<form:hidden path="id"/>
-				<form:hidden path="value"/>
+			<form:form action="${basePath }rolepermission/save/${rolePer.role.id}" modelAttribute="rolePer" class="form-horizontal">
+				<form:hidden path="role.id"/>
 				<div class="form-group row">
-					<label class="control-label col-2">类型</label>
+					<label class="control-label col-2">权限选择</label>
 					<div class="col-8">
-						<form:input path="type" class="form-control" placeholder="类型" maxlength="20" />
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="control-label col-2">标签</label>
-					<div class="col-8">
-						<form:input path="label" class="form-control" placeholder="标签" maxlength="20" />
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="control-label col-2">类型</label>
-					<div class="col-8">
-						<form:input path="description" class="form-control" placeholder="说明" maxlength="20" />
+						<form:select path="permissions.id" class="select2" >
+							<form:option value="" label=""/>
+							<form:options items="${requestScope.permissionsList }" itemLabel="name" itemValue="id"/>
+						</form:select>
 					</div>
 				</div>
 				<div class="form-group row">

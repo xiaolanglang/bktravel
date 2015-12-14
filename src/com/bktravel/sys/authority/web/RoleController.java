@@ -39,7 +39,7 @@ public class RoleController extends BaseController {
 			role = roleService.get(role);
 		}
 
-		model.addAttribute("permission", role);
+		model.addAttribute("role", role);
 		return "sys/authority/role/save";
 	}
 
