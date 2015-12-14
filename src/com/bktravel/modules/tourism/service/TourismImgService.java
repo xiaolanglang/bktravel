@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bktravel.common.config.Global;
 import com.bktravel.modules.tourism.dao.TourismImgDao;
 import com.bktravel.modules.tourism.entity.Tourism;
 import com.bktravel.modules.tourism.entity.TourismImg;
-import com.bkweb.common.config.Global;
 import com.bkweb.common.service.impl.CrudService;
 import com.bkweb.common.utils.FileUploadUtils;
 import com.bkweb.common.utils.IdUtils;
@@ -20,7 +20,7 @@ import com.bkweb.common.utils.IdUtils;
 @Service
 @Transactional
 public class TourismImgService extends CrudService<TourismImgDao, TourismImg> {
-	
+
 	public void save(Tourism tourism, HttpServletRequest request) {
 		TourismImg tourismImg = new TourismImg();
 		tourismImg.setTourism(tourism);

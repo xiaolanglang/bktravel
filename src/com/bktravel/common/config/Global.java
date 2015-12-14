@@ -1,6 +1,3 @@
-/**
- * Copyright &copy; 2012-2014 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
- */
 package com.bktravel.common.config;
 
 import java.util.Map;
@@ -15,7 +12,7 @@ import com.google.common.collect.Maps;
  * @author ThinkGem
  * @version 2014-06-25
  */
-public class Global extends com.bkweb.common.config.Global {
+public class Global {
 
 	/**
 	 * 当前对象实例

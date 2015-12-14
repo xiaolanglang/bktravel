@@ -3,9 +3,9 @@ package com.bktravel.common.tld;
 import java.util.List;
 import java.util.Map;
 
+import com.bktravel.common.config.Global;
 import com.bktravel.common.utils.DictUtils;
 import com.bktravel.sys.dict.entity.Dictionary;
-import com.bkweb.common.config.Global;
 import com.bkweb.common.util.PropertyLoader;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.common.utils.hibernatepage.HpageUtils;
@@ -51,8 +51,8 @@ public class Message {
 	public static List<Dictionary> getDictList(String type) {
 		return DictUtils.getDictList(type);
 	}
-	
-	public static String page(HPage<?> page){
+
+	public static String page(HPage<?> page) {
 		return HpageUtils.page(page);
 	}
 
