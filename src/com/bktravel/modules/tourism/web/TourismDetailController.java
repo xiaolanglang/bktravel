@@ -35,7 +35,7 @@ public class TourismDetailController extends BaseController {
 	@RequestMapping("save")
 	public String save(TourismDetail tourismDetail, Model model) {
 		// tourismDetailService.saveOrUpdate(tourismDetail);
-		addMessage(model, "添加省会信息成功");
+		addMessage(model, "保存省会信息成功");
 
 		model.addAttribute("tourism", new Tourism());
 
@@ -49,7 +49,7 @@ public class TourismDetailController extends BaseController {
 		}
 
 		model.addAttribute("tourismDetail", new TourismDetail());
-		
+
 		return "tourism/tourism/save_route";
 	}
 

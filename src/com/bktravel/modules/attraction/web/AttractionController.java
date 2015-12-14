@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.attraction.entity.Attraction;
@@ -31,9 +32,9 @@ public class AttractionController extends BaseController {
 	}
 
 	@RequestMapping("save")
-	public String save(Attraction attraction, Model model) {
+	public String save(Attraction attraction, RedirectAttributes attributes) {
 		attractionService.saveOrUpdate(attraction);
-		addMessage(model, "添加省会信息成功");
+		addRedirectMessage(attributes, "保存景点成功");
 		return "redirect:" + adminPath + "/attraction/list";
 	}
 
@@ -48,9 +49,9 @@ public class AttractionController extends BaseController {
 	}
 
 	@RequestMapping("del")
-	public String delete(Attraction attraction, Model model) {
+	public String delete(Attraction attraction, RedirectAttributes attributes) {
 		attractionService.trueDelete(attraction);
-		addMessage(model, "删除洲信息成功");
+		addRedirectMessage(attributes, "删除景点成功");
 		return "redirect:" + adminPath + "/attraction/list";
 	}
 }

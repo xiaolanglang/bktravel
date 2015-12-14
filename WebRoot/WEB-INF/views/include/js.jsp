@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<message:notice content="${requestScope.message }"/>
 <script type="text/javascript" src="<%=jsPath%>common/jquery/jquery_1.11.js"></script>
 <script type="text/javascript" src="<%=jsPath%>common/jquery/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="<%=jsPath%>common/jquery.validate/jquery.validate.min.js"></script>

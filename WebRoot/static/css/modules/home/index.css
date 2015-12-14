@@ -48,7 +48,7 @@ IMPORT文件，通用导入功能
 
 .close .openClose div { height: 2px; width: 10px; margin-bottom: 2px; margin-left: 2px; float: none; }
 
-.content-left-menu { clear: both; width: 100%; }
+.content-left-menu { clear: both; width: 185px; }
 .content-left-menu li { position: relative; background-color: #2E363F; }
 .content-left-menu li a { color: #939DA8; position: relative; }
 .content-left-menu li a:hover { background-color: #6E849E; color: white; }

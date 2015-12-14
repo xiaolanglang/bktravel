@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.position.entity.City;
@@ -34,12 +35,12 @@ public class StartPlaceController extends BaseController {
 	}
 
 	@RequestMapping("save")
-	public String save(StartPlace startPlace, Model model) {
+	public String save(StartPlace startPlace, RedirectAttributes attributes) {
 		City city = positionService.getCity(startPlace.getCity());
 		startPlace.setName(city.getName());
 		startPlace.setNameEn(city.getNameEn());
 		startPlaceService.saveOrUpdate(startPlace);
-		addMessage(model, "添加省会信息成功");
+		addRedirectMessage(attributes, "保存出发地成功");
 		return "redirect:" + adminPath + "/startPlace/list";
 	}
 
@@ -54,9 +55,9 @@ public class StartPlaceController extends BaseController {
 	}
 
 	@RequestMapping("del")
-	public String delete(StartPlace startPlace, Model model) {
+	public String delete(StartPlace startPlace, RedirectAttributes attributes) {
 		startPlaceService.trueDelete(startPlace);
-		addMessage(model, "删除洲信息成功");
+		addRedirectMessage(attributes, "删除出发地成功");
 		return "redirect:" + adminPath + "/startPlace/list";
 	}
 }

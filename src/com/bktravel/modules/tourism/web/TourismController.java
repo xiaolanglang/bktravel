@@ -88,7 +88,7 @@ public class TourismController extends BaseController {
 
 		// tourismService.saveOrUpdate(tourism);
 
-		addMessage(model, "添加省会信息成功");
+		addMessage(model, "保存省会信息成功");
 
 		return "redirect:" + adminPath + "/tourism/list";
 	}

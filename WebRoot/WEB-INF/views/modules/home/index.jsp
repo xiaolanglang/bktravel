@@ -273,7 +273,7 @@
 		</div>
 	</div>
 	<div class="footer" id="footer">
-		Created By gitHub-XiaoLangLang @2015-1-1  <a id="test">asdsdasd</a>
+		Created By gitHub-XiaoLangLang @2015-1-1
 	</div>
 </body>
 	<%@include file="/WEB-INF/views/include/js.jsp"%>

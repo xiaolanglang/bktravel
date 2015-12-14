@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.position.entity.Country;
@@ -28,9 +29,9 @@ public class CountryController extends BaseController {
 	}
 
 	@RequestMapping("save")
-	public String save(Country country, Model model) {
+	public String save(Country country, RedirectAttributes attributes) {
 		countryService.saveOrUpdate(country);
-		addMessage(model, "添加县信息成功");
+		addRedirectMessage(attributes, "保存县成功");
 		return "redirect:" + adminPath + "/country/list";
 	}
 
@@ -38,16 +39,16 @@ public class CountryController extends BaseController {
 	public String edit(Country country, Model model) {
 		if (country != null && !StringUtils.isEmpty(country.getId())) {
 			country = countryService.get(country);
-		} 
+		}
 
 		model.addAttribute("country", country);
 		return "position/country/save";
 	}
 
 	@RequestMapping("del")
-	public String delete(Country country, Model model) {
+	public String delete(Country country, RedirectAttributes attributes) {
 		countryService.trueDelete(country);
-		addMessage(model, "删除洲信息成功");
+		addRedirectMessage(attributes, "删除县成功");
 		return "redirect:" + adminPath + "/country/list";
 	}
 }

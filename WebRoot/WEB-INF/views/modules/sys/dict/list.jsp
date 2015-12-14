@@ -5,7 +5,8 @@
 <head>
 	<%@include file="/WEB-INF/views/include/header.jsp"%>
 	<title>区域列表</title>
-	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/common/content-right-list.css"></head>
+	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/common/content-right-list.css">
+</head>
 <body>
 	<div class="contents">
 		<ul class="nav-tabs nav">
@@ -60,7 +61,7 @@
 							<td>${dictionary.description }</td>
 							<td>
 								<a href="<%=basePath%>dict/edit?id=${dictionary.id}">修改</a>
-								<%-- <a href="<%=basePath%>dict/del?id=${dictionary.id}">删除</a> --%>
+								<a href="<%=basePath%>dict/del?id=${dictionary.id}">删除</a>
 							</td>
 						</tr>
 					</c:forEach>

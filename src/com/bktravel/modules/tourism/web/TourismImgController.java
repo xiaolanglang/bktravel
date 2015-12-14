@@ -44,9 +44,8 @@ public class TourismImgController extends BaseController {
 	}
 
 	@RequestMapping("del")
-	public String delete(TourismImg tourismImg, Model model) {
+	public String delete(TourismImg tourismImg) {
 		tourismImgService.trueDelete(tourismImg);
-		addMessage(model, "删除洲信息成功");
 		return "redirect:" + adminPath + "/tourismImg/list";
 	}
 }

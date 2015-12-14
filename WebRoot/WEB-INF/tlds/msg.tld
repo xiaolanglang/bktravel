@@ -5,12 +5,6 @@
 	<tlib-version>1.0</tlib-version>
 	<short-name>msg</short-name>
 	<uri>http://tzj/message</uri>
-	<!-- <function>
-		<description>获取请求路径</description>
-		<name>getPath</name>
-		<function-class>com.bkweb.common.tld.Message</function-class>
-		<function-signature>java.lang.String getPath()</function-signature>
-	</function> -->
 	<function>
 	    <description>获取字典对象列表</description>
 	    <name>getDictList</name>

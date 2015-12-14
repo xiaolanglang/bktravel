@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.position.entity.Province;
@@ -32,9 +33,9 @@ public class ProvinceController extends BaseController {
 	}
 
 	@RequestMapping("save")
-	public String save(Province province, Model model) {
+	public String save(Province province, RedirectAttributes attributes) {
 		provinceService.saveOrUpdate(province);
-		addMessage(model, "添加省会信息成功");
+		addRedirectMessage(attributes, "保存省会成功");
 		return "redirect:" + adminPath + "/province/list";
 	}
 
@@ -42,16 +43,16 @@ public class ProvinceController extends BaseController {
 	public String edit(Province province, Model model) {
 		if (province != null && !StringUtils.isEmpty(province.getId())) {
 			province = provinceService.get(province);
-		} 
+		}
 
 		model.addAttribute("province", province);
 		return "position/province/save";
 	}
 
 	@RequestMapping("del")
-	public String delete(Province province, Model model) {
+	public String delete(Province province, RedirectAttributes attributes) {
 		provinceService.trueDelete(province);
-		addMessage(model, "删除洲信息成功");
+		addRedirectMessage(attributes, "删省会成功");
 		return "redirect:" + adminPath + "/province/list";
 	}
 }

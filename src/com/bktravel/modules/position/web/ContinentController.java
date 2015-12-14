@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.position.entity.Continent;
@@ -28,9 +29,9 @@ public class ContinentController extends BaseController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "save")
-	public String save(Continent continent, Model model) {
+	public String save(Continent continent, RedirectAttributes attributes) {
 		continentService.saveOrUpdate(continent);
-		addMessage(model, "保存洲信息成功");
+		addRedirectMessage(attributes, "保存洲成功");
 		return "redirect:" + adminPath + "/continent/list";
 	}
 
@@ -38,16 +39,16 @@ public class ContinentController extends BaseController {
 	public String edit(Continent continent, Model model) {
 		if (continent != null && !StringUtils.isEmpty(continent.getId())) {
 			continent = continentService.get(continent);
-		} 
+		}
 
 		model.addAttribute("continent", continent);
 		return "position/continent/save";
 	}
 
 	@RequestMapping("del")
-	public String delete(Continent continent, Model model) {
+	public String delete(Continent continent, RedirectAttributes attributes) {
 		continentService.trueDelete(continent);
-		addMessage(model, "删除洲信息成功");
+		addRedirectMessage(attributes, "删除洲成功");
 		return "redirect:" + adminPath + "/continent/list";
 	}
 }
