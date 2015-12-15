@@ -64,11 +64,5 @@
 			</props>
 		</property>
 	</bean>
-	<!-- 支持Shiro对Controller的方法级AOP安全控制 end -->
-
-	<!-- 这是一种配置异常的方法，另外一种是在java类中配置，两个配一个就好了，如果同时配置的话，优先java类中的配置 -->
-	<!-- <bean id="exceptionResolver" class="com.mybatis.MyHandlerExceptionResolver"/> -->
-
-	<!-- <mvc:view-controller path="/" view-name="sys/login/login" /> -->
 
 </beans>
