@@ -95,13 +95,6 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- 静态文件配置 -->
-	<servlet-mapping>
-		<servlet-name>default</servlet-name>
-		<url-pattern>/static/*</url-pattern>
-		<url-pattern>/file/*</url-pattern>
-	</servlet-mapping>
-
 	<!-- hibernate的session控制 -->
 	<filter>
 		<filter-name>OpenSessionInViewFilter</filter-name>
