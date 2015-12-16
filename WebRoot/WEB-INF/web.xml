@@ -74,8 +74,7 @@
 		<filter-name>gZip</filter-name>
 		<url-pattern>/admin/*</url-pattern>
 		<url-pattern>*.bmp</url-pattern>
-		<url-pattern>/static/css/*</url-pattern>
-		<url-pattern>/static/js/*</url-pattern>
+		<url-pattern>*.js</url-pattern>
 		<url-pattern>*.css</url-pattern>
 		<url-pattern>/</url-pattern>
 	</filter-mapping>
