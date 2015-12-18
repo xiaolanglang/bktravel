@@ -25,13 +25,13 @@
 				<div class="form-group row">
 					<label class="control-label col-2">旅游线路标题</label>
 					<div class="col-8">
-						<form:input path="title" class="form-control" placeholder="旅游线路标题" maxlength="15" />
+						<form:input path="title" class="form-control" placeholder="旅游线路标题" maxlength="23" />
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="control-label col-2">旅游线路副标题</label>
 					<div class="col-8">
-						<form:input path="subtitle" class="form-control" placeholder="旅游线路副标题" maxlength="15" />
+						<form:input path="subtitle" class="form-control" placeholder="旅游线路副标题" maxlength="25" />
 					</div>
 				</div>
 				<div class="form-group row">
