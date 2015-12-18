@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bktravel.common.web.BaseController;
-import com.bktravel.modules.tourism.entity.Tourism;
-import com.bktravel.modules.tourism.entity.TourismImg;
-import com.bktravel.modules.tourism.service.TourismImgService;
+import com.bkweb.modules.tourism.entity.Tourism;
+import com.bkweb.modules.tourism.entity.TourismImg;
+import com.bkweb.modules.tourism.service.TourismImgService;
 
 @Controller
 @RequestMapping("${adminPath}/tourismImg")

@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
-import com.bktravel.sys.dict.entity.Dictionary;
-import com.bktravel.sys.dict.service.DictionaryService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
+import com.bkweb.sys.dict.entity.Dictionary;
+import com.bkweb.sys.dict.service.BkDictionaryService;
 
 @Controller
 @RequestMapping("${adminPath}/dict")
 public class DictionaryController extends BaseController {
 
 	@Autowired
-	private DictionaryService dictService;
+	private BkDictionaryService dictService;
 
 	@RequestMapping("list")
 	public String findList(Dictionary dictionary, Integer pageNum, Model model) {

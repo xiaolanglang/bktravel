@@ -3,10 +3,10 @@ package com.bktravel.common.utils;
 import java.util.List;
 import java.util.Map;
 
-import com.bktravel.sys.dict.dao.DictionaryDao;
-import com.bktravel.sys.dict.entity.Dictionary;
 import com.bkweb.common.utils.SpringContextHolder;
 import com.bkweb.common.utils.StringUtils;
+import com.bkweb.sys.dict.dao.BkDictionaryDao;
+import com.bkweb.sys.dict.entity.Dictionary;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -18,7 +18,7 @@ import com.google.common.collect.Maps;
  */
 public class DictUtils {
 
-	private static DictionaryDao dictDao = SpringContextHolder.getBean(DictionaryDao.class);
+	private static BkDictionaryDao dictDao = SpringContextHolder.getBean(BkDictionaryDao.class);
 	private static Map<String, List<Dictionary>> dictMap = null;
 	private static String defaultValue = "无";
 

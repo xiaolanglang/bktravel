@@ -5,10 +5,10 @@ import java.util.Map;
 
 import com.bktravel.common.config.Global;
 import com.bktravel.common.utils.DictUtils;
-import com.bktravel.sys.dict.entity.Dictionary;
 import com.bkweb.common.util.PropertyLoader;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.common.utils.hibernatepage.HpageUtils;
+import com.bkweb.sys.dict.entity.Dictionary;
 import com.google.common.collect.Maps;
 
 public class Message {

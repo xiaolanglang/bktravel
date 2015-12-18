@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
-import com.bktravel.modules.position.entity.Province;
-import com.bktravel.modules.position.service.PositionService;
-import com.bktravel.modules.position.service.ProvinceService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
+import com.bkweb.modules.position.entity.Province;
+import com.bkweb.modules.position.service.PositionService;
+import com.bkweb.modules.position.service.ProvinceService;
 
 @Controller
 @RequestMapping("${adminPath}/province")

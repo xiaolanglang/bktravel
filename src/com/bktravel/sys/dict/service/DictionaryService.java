@@ -2,17 +2,13 @@ package com.bktravel.sys.dict.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bktravel.sys.dict.dao.DictionaryDao;
-import com.bktravel.sys.dict.entity.Dictionary;
-import com.bkweb.common.service.impl.CrudService;
 import com.bkweb.common.utils.StringUtils;
+import com.bkweb.sys.dict.entity.Dictionary;
 
-@Service
 @Transactional
-public class DictionaryService extends CrudService<DictionaryDao, Dictionary> {
+public class DictionaryService extends com.bkweb.sys.dict.service.BkDictionaryService {
 	/**
 	 * 找出一个类型中的最大的value值
 	 * 

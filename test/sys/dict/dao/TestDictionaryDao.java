@@ -14,8 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bktravel.sys.dict.dao.DictionaryDao;
-import com.bktravel.sys.dict.entity.Dictionary;
+import com.bkweb.sys.dict.dao.BkDictionaryDao;
+import com.bkweb.sys.dict.entity.Dictionary;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/spring-*.xml" })
@@ -26,7 +26,7 @@ public class TestDictionaryDao {
 	private SessionFactory sessionFactory;
 
 	@Autowired
-	private DictionaryDao dictionaryDao;
+	private BkDictionaryDao dictionaryDao;
 
 	@Before
 	public void before() {

@@ -13,10 +13,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bktravel.modules.position.dao.ProvinceDao;
-import com.bktravel.modules.position.entity.Continent;
-import com.bktravel.modules.position.entity.Nation;
-import com.bktravel.modules.position.entity.Province;
+import com.bkweb.modules.position.dao.ProvinceDao;
+import com.bkweb.modules.position.entity.Continent;
+import com.bkweb.modules.position.entity.Nation;
+import com.bkweb.modules.position.entity.Province;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/spring-*.xml" })

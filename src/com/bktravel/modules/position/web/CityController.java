@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
-import com.bktravel.modules.position.entity.City;
-import com.bktravel.modules.position.service.CityService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
+import com.bkweb.modules.position.entity.City;
+import com.bkweb.modules.position.service.CityService;
 
 @Controller
 @RequestMapping("${adminPath}/city")

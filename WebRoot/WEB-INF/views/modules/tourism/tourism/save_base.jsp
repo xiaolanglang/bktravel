@@ -71,6 +71,12 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label class="control-label col-2">天数</label>
+					<div class="col-8">
+						<form:input path="days" class="form-control" placeholder="天数" maxlength="2" />
+					</div>
+				</div>
+				<div class="form-group row">
 					<label class="control-label col-2">是否隐藏</label>
 					<div class="radio-inline col-8">
 						<label>
