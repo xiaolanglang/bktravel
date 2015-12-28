@@ -4,17 +4,18 @@
 	
 		<div class="ng">
 			<div class="item" ng-repeat="img in imgList">
+				<div class="{{img.cover == '1'?'file-iscover':'hide'}}">封面</div>
 				<div class="file-icon" style="background-image: url(<%=filePath %>{{img.url}});">
 				</div>
 				<div class="file-name">
 					<a node-type="name" href="javascript:void(0);" ng-bind="img.name"></a>
-					<!-- 文件名称编辑 -->
-					<!-- <div node-type="edit-name" class="edit-name">
-						<input node-type="edit-name-box" class="box" type="text" value=""> <span
-							node-type="edit-name-sure" class="sure"></span> <span node-type="edit-name-cancel"
-							class="cancel"></span>
-					</div> -->
 				</div>
+				<div class="file-del round">
+				</div>
+				<a href="javascript:void(0)" class="glyphicon glyphicon-trash file-del-img round" ng-click="del(img.id)"></a>
+				<a href="javascript:void(0)" class="file-cover" ng-click="cover(img.id)">
+					设为封面
+				</a>
 			</div>
 		</div>
 		

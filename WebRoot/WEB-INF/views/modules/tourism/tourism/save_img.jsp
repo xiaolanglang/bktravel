@@ -34,6 +34,6 @@
 		$("#stepBar").stepBarInit({step:3});
 	})
 </script>
-<script type="text/javascript" src="<%=jsPath%>common/requirejs_2.1.11.js" 
+<script type="text/javascript" src="<%=jsPath%>common/requirejs/requirejs_2.1.11.js" 
 		data-main="<%=jsPath %>modules/tourism/tourism/img_info/main.js"></script>
 </html>

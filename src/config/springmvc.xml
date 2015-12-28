@@ -66,6 +66,9 @@
 		</property>
 	</bean>
 	
+	<!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
+	<mvc:default-servlet-handler />
+	
 	<!-- 静态资源映射 -->
     <mvc:resources order="1" mapping="/static/**" location="/static/" cache-period="31536000"/>
 

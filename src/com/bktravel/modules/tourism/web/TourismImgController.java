@@ -44,8 +44,16 @@ public class TourismImgController extends BaseController {
 	}
 
 	@RequestMapping("del")
+	@ResponseBody
 	public String delete(TourismImg tourismImg) {
 		tourismImgService.trueDelete(tourismImg);
+		return "redirect:" + adminPath + "/tourismImg/list";
+	}
+
+	@RequestMapping("cover")
+	@ResponseBody
+	public String cover(TourismImg tourismImg) {
+		tourismImgService.cover(tourismImg);
 		return "redirect:" + adminPath + "/tourismImg/list";
 	}
 }

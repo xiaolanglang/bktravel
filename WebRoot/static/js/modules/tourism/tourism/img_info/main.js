@@ -11,7 +11,7 @@ require.config({
 	paths : {
 		// app
 		"app" : [ bk.getJsPath() + "modules/tourism/tourism/img_info/app" ],
-		"angularFileUpload" : [ bk.getJsPath() + "common/angular-file-upload.min" ],
+		"angularFileUpload" : [ bk.getJsPath() + "common/angularjs/angular-file-upload.min" ],
 		// controller
 		"AppController" : [ bk.getJsPath() + "modules/tourism/tourism/img_info/controller/TourismImgController" ],
 		// common-service

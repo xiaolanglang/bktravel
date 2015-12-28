@@ -7,6 +7,10 @@
 	<title>爱旅游后台登录</title>
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/common/content-right-list.css">
 	<link type="text/css" href="<%=cssPath%>modules/login/signin.css" rel="stylesheet">
+	<script language="JavaScript">
+		if (window != top)
+			top.location.href = location.href;
+	</script>
 </head>
 <body>
 	<div class="signin">
