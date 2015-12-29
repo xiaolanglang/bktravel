@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ITravel</title>
+	<title>bktravel</title>
 	<%@include file="/WEB-INF/views/include/header.jsp"%>
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/home/index.css">
 	<link rel="stylesheet" type="text/css" href="<%=cssPath%>modules/home/jquery.jerichotab.css">
