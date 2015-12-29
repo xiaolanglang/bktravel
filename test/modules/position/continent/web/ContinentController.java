@@ -47,7 +47,7 @@ public class ContinentController {
 	// @Rollback(false)
 	public void list() throws Exception {
 		String requestBody = "{\"pageNum\":\"1\"}";
-		String path = "/continent/list";
+		String path = "/admin/continent/list";
 		this.mockMvc.perform(MockMvcRequestBuilders.post(path).contentType(MediaType.ALL).content(requestBody))
 				.andExpect(MockMvcResultMatchers.status().isOk()).andDo(MyHandle.print());
 
