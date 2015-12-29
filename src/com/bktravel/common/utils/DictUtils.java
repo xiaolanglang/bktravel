@@ -85,7 +85,7 @@ public class DictUtils {
 	public static List<Dictionary> getDictList(String type) {
 		if (dictMap == null) {
 			dictMap = Maps.newHashMap();
-			for (Dictionary dict : dictDao.findAllList(Dictionary.class, true)) {
+			for (Dictionary dict : dictDao.findAllList(Dictionary.class, false)) {
 				List<Dictionary> dictList = dictMap.get(dict.getType());
 				if (dictList != null) {
 					dictList.add(dict);

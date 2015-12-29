@@ -1,11 +1,18 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%-- <%@include file="/WEB-INF/views/include/tags.jsp"%> --%>
 <div class="container fileupload ng">
 	<div class="row">
         <div class="row">
 			<div style="float:right;">
-				<div class="btn btn-primary glyphicon glyphicon-folder-open file">
+				<select class="select2" style="width:250px;" id="img_type">
+					<option value=""></option>
+					<c:forEach items="${msg:getDictList('img_type')}" var="imgType">
+						<option value="${imgType.value}">${imgType.label}</option>
+					</c:forEach>
+				</select>
+				<div class="btn btn-primary glyphicon glyphicon-folder-open file" id="select-file" style="display: none;">
 					Select File
-					<input type="file" nv-file-select uploader="uploader" multiple="multiple" />
+					<input type="file" nv-file-select uploader="uploader" id="imgFile"/>
 				</div> 
 				<button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()"
 					ng-disabled="!uploader.getNotUploadedItems().length">

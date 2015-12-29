@@ -36,4 +36,7 @@
 </script>
 <script type="text/javascript" src="<%=jsPath%>common/requirejs/requirejs_2.1.11.js" 
 		data-main="<%=jsPath %>modules/tourism/tourism/img_info/main.js"></script>
+		
+		<script type="text/javascript">
+		</script>
 </html>

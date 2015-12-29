@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bktravel.common.web.BaseController;
+import com.bkweb.common.utils.FileUtils;
+import com.bkweb.common.web.Result;
 import com.bkweb.modules.tourism.entity.Tourism;
 import com.bkweb.modules.tourism.entity.TourismImg;
 import com.bkweb.modules.tourism.service.TourismImgService;
@@ -30,9 +32,15 @@ public class TourismImgController extends BaseController {
 
 	@RequestMapping("save")
 	@ResponseBody
-	public String save(Tourism tourism, HttpServletRequest request) {
-		tourismImgService.save(tourism, request);
-		return "SUCCSEE";
+	public Object save(String id, String type, HttpServletRequest request) {
+		Tourism tourism = new Tourism();
+		tourism.setId(id);
+		TourismImg tourismImg = new TourismImg();
+		tourismImg.setTourism(tourism);
+		tourismImg.setType(type);
+		Result result = new Result();
+		tourismImgService.save(tourismImg, request, result);
+		return result;
 	}
 
 	@RequestMapping("save_img/{id}")
@@ -46,7 +54,10 @@ public class TourismImgController extends BaseController {
 	@RequestMapping("del")
 	@ResponseBody
 	public String delete(TourismImg tourismImg) {
-		tourismImgService.trueDelete(tourismImg);
+		tourismImg = tourismImgService.get(tourismImg);
+		if (FileUtils.delFile(tourismImg.getLocalUrl())) {
+			tourismImgService.trueDelete(tourismImg);
+		}
 		return "redirect:" + adminPath + "/tourismImg/list";
 	}
 

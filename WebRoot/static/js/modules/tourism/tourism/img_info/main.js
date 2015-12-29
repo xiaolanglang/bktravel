@@ -15,12 +15,17 @@ require.config({
 		// controller
 		"AppController" : [ bk.getJsPath() + "modules/tourism/tourism/img_info/controller/TourismImgController" ],
 		// common-service
-		"CrudService" : [ bk.getJsPath() + "modules/common/CrudService" ]
+		"CrudService" : [ bk.getJsPath() + "modules/common/CrudService" ],
+		"jBox" : [ bk.getJsPath() + "common/jBox/jBox.min" ]
 	},
 	shim : {
 		'angularFileUpload' : {
 			deps : [ "angular" ],
 			exports : 'angularFileUpload'
+		},
+		'jBox' : {
+			deps : [ "jquery" ],
+			exports : 'jBox'
 		}
 	}
 });

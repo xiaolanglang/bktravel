@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
@@ -13,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.bkweb.common.exception.ServiceException;
 
 public class BaseController {
 	@Autowired
@@ -71,5 +74,11 @@ public class BaseController {
 			sb.append(message).append(messages.length > 1 ? "<br/>" : "");
 		}
 		attributes.addFlashAttribute("message", sb.toString());
+	}
+
+	/** 基于@ExceptionHandler异常处理 */
+	public void handleServiceException(HttpServletRequest request, Exception ex) {
+		if (ex instanceof ServiceException) {
+		}
 	}
 }
