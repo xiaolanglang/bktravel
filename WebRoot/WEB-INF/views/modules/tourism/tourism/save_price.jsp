@@ -23,25 +23,13 @@
 			<form:form action="${basePath }tourism/save_price" modelAttribute="tourism" class="form-horizontal">
 				<form:hidden path="id"/>
 				<div class="form-group row">
-					<label class="control-label col-2">成人原价</label>
-					<div class="col-8">
-						<form:input path="adultOriginalPrice" class="form-control" placeholder="成人原价" maxlength="15" />
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="control-label col-2">成人现价</label>
+					<label class="control-label col-2">成人价</label>
 					<div class="col-8">
 						<form:input path="adultPrice" class="form-control" placeholder="成人现价" maxlength="15" />
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="control-label col-2">儿童原价</label>
-					<div class="col-8">
-						<form:input path="childrenOriginalPrice" class="form-control" placeholder="儿童原价" maxlength="15" />
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="control-label col-2">儿童现价</label>
+					<label class="control-label col-2">儿童价</label>
 					<div class="col-8">
 						<form:input path="childrenPrice" class="form-control" placeholder="儿童现价" maxlength="15" />
 					</div>

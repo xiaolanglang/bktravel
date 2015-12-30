@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.bktravel.common.config.Global;
-import com.bktravel.common.utils.DictUtils;
 import com.bkweb.common.util.PropertyLoader;
+import com.bkweb.common.utils.DictUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.common.utils.hibernatepage.HpageUtils;
 import com.bkweb.sys.dict.entity.Dictionary;

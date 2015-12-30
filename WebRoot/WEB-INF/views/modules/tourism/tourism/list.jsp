@@ -42,8 +42,7 @@
 						<th>是否隐藏</th>
 						<th>旅游线路类型</th>
 						<th>天数</th>
-						<th>成人原价</th>
-						<th>成人现价</th>
+						<th>价格</th>
 						<th>折扣</th>
 						<th>操作</th>
 					</tr>
@@ -56,7 +55,6 @@
 							<td>${msg:getDictLabel(tourism.type,"tourism_types")}</td>
 							<td>${tourism.days }</td>
 							<td>${tourism.adultPrice }</td>
-							<td>${tourism.adultOriginalPrice }</td>
 							<td>${tourism.discount }</td>
 							<td>
 								<a href="<%=basePath%>tourism/publish?id=${tourism.id}">发布</a>
