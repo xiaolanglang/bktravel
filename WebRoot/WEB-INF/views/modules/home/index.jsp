@@ -54,14 +54,30 @@
 				<li>
 					<a href="javascript:void(0)" class="menu-father">
 						<span class="icon-list2 font-ico"></span>
-						<span class="msg">管理菜单一</span>
+						<span class="msg">移动端菜单</span>
 						<span class="icon-circle-up font-ico"></span>
 					</a>
 					<ul class="nav">
 						<li>
 							<a href="javascript:void(0)" class="menu-father">
 								<span class="icon-menu font-ico"></span>
-								<span class="msg">二级菜单</span>
+								<span class="msg">首页</span>
+								<span class="icon-circle-up font-ico"></span>
+							</a>
+							<ul class="nav">
+								<li>
+									<a href="javascript:void(0)" class="func">
+										<span class="icon-cloud font-ico"></span>
+										<span class="msg">顶部图片</span>
+										<span class="font-ico"></span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-father">
+								<span class="icon-menu font-ico"></span>
+								<span class="msg">分类</span>
 								<span class="icon-circle-up font-ico"></span>
 							</a>
 							<ul class="nav">
@@ -72,13 +88,32 @@
 										<span class="font-ico"></span>
 									</a>
 								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-father">
+								<span class="icon-menu font-ico"></span>
+								<span class="msg">发现</span>
+								<span class="icon-circle-up font-ico"></span>
+							</a>
+							<ul class="nav">
 								<li>
-									<a href="javascript:void(0)" class="func">
+									<a href="javascript:void(0)" class="func" dataType='iframe'
+									dataLink='<%=basePath %>menu/find/list'>
 										<span class="icon-cloud font-ico"></span>
-										<span class="msg">三级菜单</span>
+										<span class="msg">内容管理</span>
 										<span class="font-ico"></span>
 									</a>
 								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-father">
+								<span class="icon-menu font-ico"></span>
+								<span class="msg">我的</span>
+								<span class="icon-circle-up font-ico"></span>
+							</a>
+							<ul class="nav">
 								<li>
 									<a href="javascript:void(0)" class="func">
 										<span class="icon-cloud font-ico"></span>
@@ -87,22 +122,6 @@
 									</a>
 								</li>
 							</ul>
-						</li>
-						<li>
-							<a href="javascript:void(0)" class="func" dataType='iframe' dataLink='./user.html'
-							iconImg='../../img/user.gif'>
-								<span class="icon-cloud font-ico"></span>
-								<span class="msg">二级菜单</span>
-								<span class="font-ico"></span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)" class="func" dataType='iframe' dataLink='./user2.html'
-							iconImg='../../img/user.gif'>
-								<span class="icon-cloud font-ico"></span>
-								<span class="msg">二级菜单</span>
-								<span class="font-ico"></span>
-							</a>
 						</li>
 					</ul>
 				</li>
