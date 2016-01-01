@@ -7,7 +7,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-	<context:property-placeholder ignore-unresolvable="true" location="classpath:config/privates/bkweb.properties" />
+	<context:property-placeholder ignore-unresolvable="true"
+		location="classpath:config/privates/bkweb.properties" />
 
 	<!-- 因为用了Hibernate默认的连接池；默认的连接池真的很有问题 配置文件里增加： -->
 	<!-- <property name="hibernate.connection.provider_class"> org.hibernate.connection.C3P0ConnectionProvider </property> <property 
@@ -63,9 +64,10 @@
 		才行 -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="mappingDirectoryLocations">
+		<property name="packagesToScan">
 			<list>
-				<value>classpath:/mapper/</value>
+				<value>com.bkweb</value>
+				<value>com.bktravel</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

@@ -77,9 +77,9 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
 			Account account = systemService.login(userName, passWord);
 			if (account != null) {
-				if (Global.NO.equals(account.getLoginFlag())) {
-					throw new AuthenticationException("msg:该已帐号禁止登录.");
-				}
+				// if (Global.NO.equals(account.getLoginFlag())) {
+				// throw new AuthenticationException("msg:该已帐号禁止登录.");
+				// }
 
 				return new SimpleAuthenticationInfo(new Principal(account, token.isMobileLogin()),
 						account.getPassword(), getName());

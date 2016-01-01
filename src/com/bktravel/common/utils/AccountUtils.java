@@ -137,7 +137,8 @@ public class AccountUtils {
 		List<Role> roleList = (List<Role>) getCache(CACHE_ROLE_LIST);
 		if (roleList == null) {
 			Account account = getAccount();
-			if (account.isAdmin()) {
+			// if (account.isAdmin()) {
+			if ("admin".equals(account.getUsername())) {
 				roleList = systemService.findAllRoleList();
 			} else {
 				roleList = systemService.findRoleListByAccount(account);
@@ -157,7 +158,8 @@ public class AccountUtils {
 		List<Permissions> permissionsList = (List<Permissions>) getCache(CACHE_PERMISSIONS_LIST);
 		if (permissionsList == null) {
 			Account account = getAccount();
-			if (account.isAdmin()) {
+			// if (account.isAdmin()) {
+			if ("admin".equals(account.getUsername())) {
 				permissionsList = systemService.findAllPermissionsList();
 			} else {
 				AccountRole ar = new AccountRole();

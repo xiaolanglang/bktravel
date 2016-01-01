@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Thu Dec 31 13:27:45 CST 2015
+#Fri Jan 01 19:52:28 CST 2016
 genBasicCompId=true
 sessionFactoryName=com.bkweb.common.hibernate.HibernateSessionFactory
 profile=
@@ -13,8 +13,8 @@ useJavaTypes=true
 keyGenerator=uuid.hex
 genVersionTag=false
 sessionFactoryId=
-basePersistenceClass=com.bkweb.common.entity.DataEntity
-genAnnotations=false
+basePersistenceClass=
+genAnnotations=true
 reSettingsFile=/bktravel/hibernate.reveng.xml
 configFile=/bktravel/src/config/hibernate.cfg.xml
 createConfigFile=true

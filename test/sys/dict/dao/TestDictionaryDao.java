@@ -48,12 +48,7 @@ public class TestDictionaryDao {
 
 	@Test
 	@Rollback(false)
-	public void update() {
-	}
-
-	@Test
-	@Rollback(false)
-	public void types() {
+	public void findAllTypes() {
 		List<String> list = dictionaryDao.findAllTypes();
 		System.out.println(list);
 	}

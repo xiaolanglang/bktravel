@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
@@ -82,13 +83,13 @@ public class TourismController extends BaseController {
 	}
 
 	@RequestMapping("save_expand")
-	public String save_expand(Tourism tourism, Model model) {
+	public String save_expand(Tourism tourism, RedirectAttributes attributes) {
 		tourism.setThemes(StringUtils.strsToString(tourism.getTheme()));
 		tourism.setStatuses(StringUtils.strsToString(tourism.getStatus()));
 
 		// tourismService.saveOrUpdate(tourism);
 
-		addMessage(model, "保存省会信息成功");
+		addRedirectMessage(attributes, "保存基础信息成功");
 
 		return "redirect:" + adminPath + "/tourism/list";
 	}
@@ -115,9 +116,9 @@ public class TourismController extends BaseController {
 	}
 
 	@RequestMapping("del")
-	public String delete(Tourism tourism, Model model) {
+	public String delete(Tourism tourism, RedirectAttributes attributes) {
 		tourismService.trueDelete(tourism);
-		addMessage(model, "删除洲信息成功");
+		addRedirectMessage(attributes, "删除旅行信息成功");
 		return "redirect:" + adminPath + "/tourism/list";
 	}
 

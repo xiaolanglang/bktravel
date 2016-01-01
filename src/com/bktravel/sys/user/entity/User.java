@@ -2,7 +2,16 @@ package com.bktravel.sys.user.entity;
 
 import java.util.Date;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.DynamicInsert;
 
 import com.bktravel.sys.account.entity.Account;
 import com.bkweb.common.entity.DataEntity;
@@ -11,7 +20,11 @@ import com.bkweb.common.entity.DataEntity;
  * User entity. @author MyEclipse Persistence Tools
  */
 
-public class User extends DataEntity<User> implements java.io.Serializable {
+@Entity
+@Table(name = "bk_userinfo")
+@DynamicInsert(true)
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+public class User extends DataEntity<User> {
 
 	/**
 	 * 
@@ -51,6 +64,8 @@ public class User extends DataEntity<User> implements java.io.Serializable {
 
 	// Property accessors
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "accountId")
 	public Account getAccount() {
 		return this.account;
 	}
@@ -59,6 +74,7 @@ public class User extends DataEntity<User> implements java.io.Serializable {
 		this.account = account;
 	}
 
+	@Column(name = "name", nullable = false, length = 20)
 	public String getName() {
 		return this.name;
 	}
@@ -67,6 +83,7 @@ public class User extends DataEntity<User> implements java.io.Serializable {
 		this.name = name;
 	}
 
+	@Column(name = "sex", nullable = false, length = 20)
 	public String getSex() {
 		return this.sex;
 	}
@@ -75,6 +92,7 @@ public class User extends DataEntity<User> implements java.io.Serializable {
 		this.sex = sex;
 	}
 
+	@Column(name = "age", nullable = false, length = 20)
 	public Integer getAge() {
 		return this.age;
 	}
@@ -83,6 +101,7 @@ public class User extends DataEntity<User> implements java.io.Serializable {
 		this.age = age;
 	}
 
+	@Column(name = "birthday", nullable = false, length = 20)
 	public Date getBirthday() {
 		return this.birthday;
 	}
@@ -91,17 +110,13 @@ public class User extends DataEntity<User> implements java.io.Serializable {
 		this.birthday = birthday;
 	}
 
+	@Column(name = "card", nullable = false, length = 20)
 	public String getCard() {
 		return this.card;
 	}
 
 	public void setCard(String card) {
 		this.card = card;
-	}
-
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this);
 	}
 
 }
