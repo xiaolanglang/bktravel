@@ -82,9 +82,10 @@
 							</a>
 							<ul class="nav">
 								<li>
-									<a href="javascript:void(0)" class="func">
+									<a href="javascript:void(0)" class="func" dataType='iframe'
+									dataLink='<%=basePath %>menu/sort/list'>
 										<span class="icon-cloud font-ico"></span>
-										<span class="msg">三级菜单</span>
+										<span class="msg">内容管理</span>
 										<span class="font-ico"></span>
 									</a>
 								</li>
