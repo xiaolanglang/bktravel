@@ -73,5 +73,5 @@
 	</div>
 </body>
 <%@include file="/WEB-INF/views/include/js.jsp"%>
-<script type="text/javascript" src="<%=jsPath%>modules/menu/find/menuFind.js"></script>
+<script type="text/javascript" src="<%=jsPath%>modules/menu/common/operate-image.js"></script>
 </html>

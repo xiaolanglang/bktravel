@@ -53,7 +53,7 @@
 							<td>${menusort.parent.name}</td>
 							<td>${menusort.name}</td>
 							<td>${menusort.nameEn}</td>
-							<td><a href="<%=basePath%>menu/sort/edit/${param.id}?id=${menusort.id}">修改</a>  <a
+							<td><a href="<%=basePath%>menu/sort/childmenuedit/${requestScope.parentId}?id=${menusort.id}">修改</a>  <a
 								href="<%=basePath%>menu/sort/childmenudel/${requestScope.parentId}?id=${menusort.id}">删除</a></td>
 						</tr>
 					</c:forEach>

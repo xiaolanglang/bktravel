@@ -30,7 +30,7 @@ public class SortPageController extends BaseController {
 
 	@RequestMapping("save")
 	public String save(MenuSort menusort, RedirectAttributes attributes) {
-		menuSortService.save(menusort);
+		menuSortService.saveOrUpdate(menusort);
 		addRedirectMessage(attributes, "保存菜单信息成功");
 		return "redirect:" + adminPath + "/menu/sort/list";
 	}
@@ -73,7 +73,7 @@ public class SortPageController extends BaseController {
 			menusort = menuSortService.get(menusort);
 		}
 
-		model.addAttribute("menusort", new MenuSort(menusort));
+		model.addAttribute("menusort", menusort);
 		model.addAttribute("parentId", parentId);
 		return "menu/sort/childMenuSave";
 	}
@@ -81,9 +81,14 @@ public class SortPageController extends BaseController {
 	@RequestMapping("childmenusave")
 	public String childMenuSave(MenuSort menusort, Model model, RedirectAttributes attributes,
 			HttpServletRequest request) {
-		menuSortService.save(menusort);
-		addRedirectMessage(attributes, "保存菜单信息成功");
-		return "redirect:" + adminPath + "/menu/sort/childmenulist/" + menusort.getParent().getId();
+		boolean flag = menuSortService.save(request, menusort);
+		if (flag) {
+			addRedirectMessage(attributes, "保存菜单信息成功");
+			return "redirect:" + adminPath + "/menu/sort/childmenulist/" + menusort.getParent().getId();
+		} else {
+			addRedirectMessage(attributes, "请选择600*400大小的图片");
+			return "redirect:" + adminPath + "/menu/sort/childmenuedit?id=" + menusort.getId();
+		}
 	}
 
 	@RequestMapping("childmenudel/{parentId}")

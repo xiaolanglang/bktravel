@@ -16,7 +16,7 @@
 			<li class="active">子栏目操作</li>
 		</ol>
 		<ul class="nav-tabs nav">
-			<li><a href="<%=basePath%>menu/sort/childmenulist/${request.id}">景点列表</a></li>
+			<li><a href="<%=basePath%>menu/sort/childmenulist/${requestScope.parentId}">景点列表</a></li>
 			<li class="active"><a>${not empty menusort.id?'修改':'添加'}信息</a></li>
 		</ul>
 		<div class="container saveform">
@@ -37,6 +37,26 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label class="control-label col-2">图片</label>
+					<div class="col-8">
+						<div id="file-name"></div>
+						<div style="display:${not empty menusort.id?'none':'block'} " id="select-file">
+							<div class="btn btn-primary glyphicon glyphicon-folder-open file">
+								选择文件
+								<input name="file" type="file" id="imgFile" multiple="multiple" />
+							</div>
+							<span class="control-label">请选择600*400大小的图片</span>
+						</div>
+						<div class="item" style="display: ${not empty menusort.id?'block':'none'}">
+							<div class="file-icon" id="bk_img"
+								style="background-image: url(${menusort.imageUrl});">
+							</div>
+							<div class="file-del round"></div>
+							<a href="javascript:void(0)" id="del-image" class="glyphicon glyphicon-trash file-del-img round"></a>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
 					<div class="radio col-8 col-push-2">
 						<input type="submit" class="btn btn-primary" value="保存">
 					</div>
@@ -46,5 +66,5 @@
 	</div>
 </body>
 <%@include file="/WEB-INF/views/include/js.jsp"%>
-<script type="text/javascript" src="<%=jsPath%>modules/menu/find/menuFind.js"></script>
+<script type="text/javascript" src="<%=jsPath%>modules/menu/common/operate-image.js"></script>
 </html>
