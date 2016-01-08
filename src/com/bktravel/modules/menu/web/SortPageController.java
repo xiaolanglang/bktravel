@@ -87,7 +87,8 @@ public class SortPageController extends BaseController {
 			return "redirect:" + adminPath + "/menu/sort/childmenulist/" + menusort.getParent().getId();
 		} else {
 			addRedirectMessage(attributes, "请选择600*400大小的图片");
-			return "redirect:" + adminPath + "/menu/sort/childmenuedit?id=" + menusort.getId();
+			return "redirect:" + adminPath + "/menu/sort/childmenuedit/" + menusort.getParent().getId() + "?id="
+					+ menusort.getId();
 		}
 	}
 
