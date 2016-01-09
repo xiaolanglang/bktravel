@@ -37,6 +37,12 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label class="control-label col-2">搜索关键词</label>
+					<div class="col-8">
+						<form:input path="keyWord" class="form-control required" placeholder="搜索关键词" />
+					</div>
+				</div>
+				<div class="form-group row">
 					<label class="control-label col-2">图片</label>
 					<div class="col-8">
 						<div id="file-name"></div>

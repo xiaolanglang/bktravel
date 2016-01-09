@@ -45,6 +45,7 @@
 						<th>父菜单名称</th>
 						<th>栏目名称</th>
 						<th>栏目英文名称</th>
+						<th>搜索关键词</th>
 						<th>操作</th>
 					</tr>
 					<c:forEach items="${requestScope.page.list }" var="menusort" varStatus="s">
@@ -53,6 +54,7 @@
 							<td>${menusort.parent.name}</td>
 							<td>${menusort.name}</td>
 							<td>${menusort.nameEn}</td>
+							<td>${menusort.keyWord}</td>
 							<td><a href="<%=basePath%>menu/sort/childmenuedit/${requestScope.parentId}?id=${menusort.id}">修改</a>  <a
 								href="<%=basePath%>menu/sort/childmenudel/${requestScope.parentId}?id=${menusort.id}">删除</a></td>
 						</tr>
