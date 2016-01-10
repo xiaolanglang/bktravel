@@ -24,6 +24,12 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label class="control-label col-2">排序</label>
+					<div class="col-8">
+						<form:input path="ord" class="form-control required" placeholder="排序" />
+					</div>
+				</div>
+				<div class="form-group row">
 					<div class="radio col-8 col-push-2">
 						<input type="submit" class="btn btn-primary" value="保存">
 					</div>

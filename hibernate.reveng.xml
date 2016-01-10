@@ -31,4 +31,7 @@
 	<table name="bk_userinfo" catalog="itravel">
 		<column name="birthday" type="java.util.Date"></column>
 	</table>
+	<table name="menu_sort" catalog="qdm205422329_db">
+		<column name="ord" property="java.lang.Integer"></column>
+	</table>
 </hibernate-reverse-engineering>

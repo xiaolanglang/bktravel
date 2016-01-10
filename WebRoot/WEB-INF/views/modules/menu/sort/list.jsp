@@ -38,12 +38,14 @@
 					<tr>
 						<th>序号</th>
 						<th>菜单名称</th>
+						<th>序号</th>
 						<th>操作</th>
 					</tr>
 					<c:forEach items="${requestScope.list }" var="menusort" varStatus="s">
 						<tr>
 							<td>${s.index+1 }</td>
 							<td>${menusort.name}</td>
+							<td>${menusort.ord}</td>
 							<td><a href="<%=basePath%>menu/sort/edit?id=${menusort.id}">修改</a> <a
 								href="<%=basePath%>menu/sort/childmenulist/${menusort.id}">下级菜单</a>  <a
 								href="<%=basePath%>menu/sort/del?id=${menusort.id}">删除</a></td>
