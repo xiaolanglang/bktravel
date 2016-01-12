@@ -12,9 +12,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.authority.dao.RoleDao;
-import com.bktravel.sys.authority.entity.Role;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.authority.dao.RoleDao;
+import com.bkweb.sys.authority.entity.Role;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/spring-*.xml" })

@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.authority.entity.AccountRole;
-import com.bktravel.sys.authority.entity.Role;
-import com.bktravel.sys.authority.service.AccountRoleService;
-import com.bktravel.sys.authority.service.RoleService;
 import com.bkweb.common.utils.hibernatepage.HPage;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.authority.entity.AccountRole;
+import com.bkweb.sys.authority.entity.Role;
+import com.bkweb.sys.authority.service.AccountRoleService;
+import com.bkweb.sys.authority.service.RoleService;
 
 @Controller
 @RequestMapping("${adminPath}/accountrole")

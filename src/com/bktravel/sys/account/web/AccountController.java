@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.account.service.AccountService;
-import com.bktravel.sys.user.entity.User;
-import com.bktravel.sys.user.service.UserService;
 import com.bkweb.common.utils.Encodes;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.account.service.AccountService;
+import com.bkweb.sys.user.entity.User;
+import com.bkweb.sys.user.service.UserService;
 
 /**
  * 用户Controller

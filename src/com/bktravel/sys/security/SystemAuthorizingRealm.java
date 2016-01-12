@@ -20,13 +20,13 @@ import org.springframework.stereotype.Service;
 
 import com.bktravel.common.config.Global;
 import com.bktravel.common.utils.AccountUtils;
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.authority.entity.Permissions;
-import com.bktravel.sys.authority.entity.Role;
 import com.bktravel.sys.log.util.LogUtils;
 import com.bktravel.sys.service.SystemService;
 import com.bkweb.common.utils.Encodes;
 import com.bkweb.common.web.Servlets;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.authority.entity.Permissions;
+import com.bkweb.sys.authority.entity.Role;
 
 /**
  * 系统安全认证实现类

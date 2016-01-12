@@ -7,17 +7,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bktravel.common.utils.AccountUtils;
-import com.bktravel.sys.account.dao.AccountDao;
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.authority.dao.AccountRoleDao;
-import com.bktravel.sys.authority.dao.PermissionsDao;
-import com.bktravel.sys.authority.dao.RoleDao;
-import com.bktravel.sys.authority.dao.RolePermissionsDao;
-import com.bktravel.sys.authority.entity.Permissions;
-import com.bktravel.sys.authority.entity.Role;
 import com.bktravel.sys.security.SystemAuthorizingRealm;
 import com.bkweb.common.security.shiro.session.SessionDAO;
 import com.bkweb.common.service.BaseService;
+import com.bkweb.sys.account.dao.AccountDao;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.authority.dao.AccountRoleDao;
+import com.bkweb.sys.authority.dao.PermissionsDao;
+import com.bkweb.sys.authority.dao.RoleDao;
+import com.bkweb.sys.authority.dao.RolePermissionsDao;
+import com.bkweb.sys.authority.entity.Permissions;
+import com.bkweb.sys.authority.entity.Role;
 
 /**
  * 系统管理，安全相关实体的管理类,包括用户、角色、菜单.

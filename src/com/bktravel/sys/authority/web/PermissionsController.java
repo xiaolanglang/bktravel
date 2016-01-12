@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
-import com.bktravel.sys.authority.entity.Permissions;
-import com.bktravel.sys.authority.service.PermissionsService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
+import com.bkweb.sys.authority.entity.Permissions;
+import com.bkweb.sys.authority.service.PermissionsService;
 
 @Controller
 @RequestMapping("${adminPath}/permissions")

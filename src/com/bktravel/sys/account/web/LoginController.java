@@ -9,9 +9,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.utils.AccountUtils;
 import com.bktravel.common.web.BaseController;
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.account.service.AccountService;
 import com.bktravel.sys.security.SystemAuthorizingRealm.Principal;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.account.service.AccountService;
 
 @Controller
 @RequestMapping("")

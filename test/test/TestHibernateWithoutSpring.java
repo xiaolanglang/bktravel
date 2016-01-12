@@ -13,8 +13,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.user.entity.User;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.user.entity.User;
 
 /**
  * 由于hibernatesessionfactory删除，本测试单元作废

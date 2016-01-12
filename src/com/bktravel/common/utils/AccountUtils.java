@@ -1,6 +1,3 @@
-/**
- * Copyright &copy; 2012-2014 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
- */
 package com.bktravel.common.utils;
 
 import java.util.List;
@@ -11,14 +8,14 @@ import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
-import com.bktravel.sys.account.entity.Account;
-import com.bktravel.sys.authority.entity.AccountRole;
-import com.bktravel.sys.authority.entity.Permissions;
-import com.bktravel.sys.authority.entity.Role;
 import com.bktravel.sys.security.SystemAuthorizingRealm.Principal;
 import com.bktravel.sys.service.SystemService;
 import com.bkweb.common.utils.CacheUtils;
 import com.bkweb.common.utils.SpringContextHolder;
+import com.bkweb.sys.account.entity.Account;
+import com.bkweb.sys.authority.entity.AccountRole;
+import com.bkweb.sys.authority.entity.Permissions;
+import com.bkweb.sys.authority.entity.Role;
 
 /**
  * 用户工具类
