@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
-import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
@@ -77,10 +76,6 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
 			Account account = systemService.login(userName, passWord);
 			if (account != null) {
-				// if (Global.NO.equals(account.getLoginFlag())) {
-				// throw new AuthenticationException("msg:该已帐号禁止登录.");
-				// }
-
 				return new SimpleAuthenticationInfo(new Principal(account, token.isMobileLogin()),
 						account.getPassword(), getName());
 			} else {
@@ -112,8 +107,9 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 				}
 				// 记住我进来的，并且当前用户已登录，则退出当前用户提示信息。
 				else {
-					AccountUtils.getSubject().logout();
-					throw new AuthenticationException("msg:账号已在其它地方登录，请重新登录。");
+					// AccountUtils.getSubject().logout();
+					// throw new
+					// AuthenticationException("msg:账号已在其它地方登录，请重新登录。");
 				}
 			}
 		}
