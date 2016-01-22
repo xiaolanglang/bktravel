@@ -37,7 +37,7 @@
 		<mysql.driver.version>5.1.30</mysql.driver.version>
 		
 		<!-- 开发模式的时候为 compile,正式部署的时候为provided-->
-		<scope.value>compile</scope.value>
+		<scope.value>provided</scope.value>
 		
 	</properties>
 	<dependencies>

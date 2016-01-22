@@ -12,5 +12,5 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <%-- <link rel="shortcut icon" href="<%=imgPath%>favicon.ico" type="image/x-icon" /> --%>
 <link rel="stylesheet" type="text/css" href="<%=cssPath%>common/style.css">
-<link rel="stylesheet" type="text/css" href="<%=cssPath%>common/select2.css">
+<link rel="stylesheet" type="text/css" href="<%=jsPath%>common/select2/css/select2.css">
 <link rel="stylesheet" type="text/css" href="<%=jsPath%>common/jBox/jBox.css">
