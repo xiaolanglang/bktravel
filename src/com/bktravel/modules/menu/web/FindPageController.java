@@ -13,14 +13,14 @@ import com.bkweb.common.utils.FileUtils;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.menu.entity.MenuFind;
-import com.bkweb.modules.menu.service.MenuFindService;
+import com.bkweb.modules.menu.service.CMenuFindService;
 
 @Controller
 @RequestMapping("${adminPath}/menu/find")
 public class FindPageController extends BaseController {
 
 	@Autowired
-	private MenuFindService menuFindService;
+	private CMenuFindService menuFindService;
 
 	@RequestMapping("list")
 	public String findList(MenuFind menuFind, Integer pageNum, Model model) {

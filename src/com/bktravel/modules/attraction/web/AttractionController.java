@@ -10,17 +10,17 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.attraction.entity.Attraction;
-import com.bkweb.modules.attraction.service.AttractionService;
-import com.bkweb.modules.position.service.PositionService;
+import com.bkweb.modules.attraction.service.CAttractionService;
+import com.bkweb.modules.position.service.CPositionService;
 
 @Controller
 @RequestMapping("${adminPath}/attraction")
 public class AttractionController extends BaseController {
 	@Autowired
-	private AttractionService attractionService;
+	private CAttractionService attractionService;
 
 	@Autowired
-	private PositionService positionService;
+	private CPositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(Attraction attraction, Integer pageNum, Model model) {

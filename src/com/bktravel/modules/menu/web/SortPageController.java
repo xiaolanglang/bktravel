@@ -13,14 +13,14 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.menu.entity.MenuSort;
-import com.bkweb.modules.menu.service.MenuSortService;
+import com.bkweb.modules.menu.service.CMenuSortService;
 
 @Controller
 @RequestMapping("${adminPath}/menu/sort")
 public class SortPageController extends BaseController {
 
 	@Autowired
-	private MenuSortService menuSortService;
+	private CMenuSortService menuSortService;
 
 	@RequestMapping("list")
 	public String sortList(Model model) {

@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
 import com.bkweb.sys.account.entity.Account;
-import com.bkweb.sys.authority.dao.PermissionsDao;
+import com.bkweb.sys.authority.dao.CPermissionsDao;
 import com.bkweb.sys.authority.entity.Permissions;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,7 +22,7 @@ import com.bkweb.sys.authority.entity.Permissions;
 public class TestPurViewDao {
 
 	@Autowired
-	private PermissionsDao permissionsDao;
+	private CPermissionsDao permissionsDao;
 
 	@Before
 	public void before() {

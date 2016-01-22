@@ -11,17 +11,17 @@ import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.Continent;
 import com.bkweb.modules.position.entity.Nation;
-import com.bkweb.modules.position.service.NationService;
-import com.bkweb.modules.position.service.PositionService;
+import com.bkweb.modules.position.service.CNationService;
+import com.bkweb.modules.position.service.CPositionService;
 
 @Controller
 @RequestMapping("${adminPath}/nation")
 public class NationController extends BaseController {
 	@Autowired
-	private NationService nationService;
+	private CNationService nationService;
 
 	@Autowired
-	private PositionService positionService;
+	private CPositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(Nation nation, Integer pageNum, Model model) {

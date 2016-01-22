@@ -13,14 +13,14 @@ import com.bkweb.modules.position.entity.Continent;
 import com.bkweb.modules.position.entity.Country;
 import com.bkweb.modules.position.entity.Nation;
 import com.bkweb.modules.position.entity.Province;
-import com.bkweb.modules.position.service.PositionService;
+import com.bkweb.modules.position.service.CPositionService;
 
 @Controller
 @RequestMapping("${adminPath}/position")
 public class PositionController extends BaseController {
 
 	@Autowired
-	private PositionService positionService;
+	private CPositionService positionService;
 
 	@RequestMapping("continentSelections")
 	@ResponseBody

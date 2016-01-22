@@ -10,14 +10,14 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.City;
-import com.bkweb.modules.position.service.CityService;
+import com.bkweb.modules.position.service.CCityService;
 
 @Controller
 @RequestMapping("${adminPath}/city")
 public class CityController extends BaseController {
 
 	@Autowired
-	private CityService cityService;
+	private CCityService cityService;
 
 	@RequestMapping("list")
 	public String findList(City city, Integer pageNum, Model model) {

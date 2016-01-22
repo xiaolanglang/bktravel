@@ -10,18 +10,18 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.Province;
-import com.bkweb.modules.position.service.PositionService;
-import com.bkweb.modules.position.service.ProvinceService;
+import com.bkweb.modules.position.service.CPositionService;
+import com.bkweb.modules.position.service.CProvinceService;
 
 @Controller
 @RequestMapping("${adminPath}/province")
 public class ProvinceController extends BaseController {
 
 	@Autowired
-	private ProvinceService provinceService;
+	private CProvinceService provinceService;
 
 	@Autowired
-	private PositionService positionService;
+	private CPositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(Province province, Integer pageNum, Model model) {

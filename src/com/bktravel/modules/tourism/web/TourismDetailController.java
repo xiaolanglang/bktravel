@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
-import com.bkweb.modules.position.service.PositionService;
+import com.bkweb.modules.position.service.CPositionService;
 import com.bkweb.modules.tourism.entity.Tourism;
 import com.bkweb.modules.tourism.entity.TourismDetail;
-import com.bkweb.modules.tourism.service.TourismDetailService;
+import com.bkweb.modules.tourism.service.CTourismDetailService;
 
 @Controller
 @RequestMapping("${adminPath}/tourismDetail")
 public class TourismDetailController extends BaseController {
 
 	@Autowired
-	private TourismDetailService tourismDetailService;
+	private CTourismDetailService tourismDetailService;
 
 	@Autowired
-	private PositionService positionService;
+	private CPositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(TourismDetail tourismDetail, Integer pageNum, Model model) {

@@ -10,13 +10,13 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.sys.authority.entity.Role;
-import com.bkweb.sys.authority.service.RoleService;
+import com.bkweb.sys.authority.service.CRoleService;
 
 @Controller
 @RequestMapping("${adminPath}/role")
 public class RoleController extends BaseController {
 	@Autowired
-	private RoleService roleService;
+	private CRoleService roleService;
 
 	@RequestMapping("list")
 	public String findList(Role role, Integer pageNum, Model model) {

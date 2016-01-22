@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bkweb.sys.account.dao.AccountDao;
+import com.bkweb.sys.account.dao.CAccountDao;
 import com.bkweb.sys.account.entity.Account;
 import com.bkweb.sys.user.dao.UserDao;
 import com.bkweb.sys.user.entity.User;
@@ -30,7 +30,7 @@ public class TestHibernateWithSpring {
 	private Session session;
 
 	@Autowired
-	private AccountDao accountDao;
+	private CAccountDao accountDao;
 
 	@Autowired
 	private UserDao userDao;

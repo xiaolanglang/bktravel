@@ -8,7 +8,7 @@ import com.bkweb.common.utils.StringUtils;
 import com.bkweb.sys.dict.entity.Dictionary;
 
 @Transactional
-public class DictionaryService extends com.bkweb.sys.dict.service.BkDictionaryService {
+public class DictionaryService extends com.bkweb.sys.dict.service.CDictionaryService {
 	/**
 	 * 找出一个类型中的最大的value值
 	 * 

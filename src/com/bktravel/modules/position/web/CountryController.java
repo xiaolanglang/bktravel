@@ -10,13 +10,13 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.Country;
-import com.bkweb.modules.position.service.CountryService;
+import com.bkweb.modules.position.service.CCountryService;
 
 @Controller
 @RequestMapping("${adminPath}/country")
 public class CountryController extends BaseController {
 	@Autowired
-	private CountryService countryService;
+	private CCountryService countryService;
 
 	@RequestMapping("list")
 	public String findList(Country country, Integer pageNum, Model model) {

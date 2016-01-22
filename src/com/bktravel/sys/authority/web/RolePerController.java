@@ -12,17 +12,17 @@ import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.sys.authority.entity.Permissions;
 import com.bkweb.sys.authority.entity.Role;
 import com.bkweb.sys.authority.entity.RolePermission;
-import com.bkweb.sys.authority.service.PermissionsService;
-import com.bkweb.sys.authority.service.RolePerService;
+import com.bkweb.sys.authority.service.CPermissionsService;
+import com.bkweb.sys.authority.service.CRolePerService;
 
 @Controller
 @RequestMapping("${adminPath}/rolepermission")
 public class RolePerController extends BaseController {
 	@Autowired
-	private RolePerService rolePerService;
+	private CRolePerService rolePerService;
 
 	@Autowired
-	private PermissionsService perService;
+	private CPermissionsService perService;
 
 	@RequestMapping("list/{roleId}")
 	public String findPermissionsByRole(@PathVariable String roleId, RolePermission rolePer, Integer pageNum,

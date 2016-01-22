@@ -10,14 +10,14 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.sys.dict.entity.Dictionary;
-import com.bkweb.sys.dict.service.BkDictionaryService;
+import com.bkweb.sys.dict.service.CDictionaryService;
 
 @Controller
 @RequestMapping("${adminPath}/dict")
 public class DictionaryController extends BaseController {
 
 	@Autowired
-	private BkDictionaryService dictService;
+	private CDictionaryService dictService;
 
 	@RequestMapping("list")
 	public String findList(Dictionary dictionary, Integer pageNum, Model model) {

@@ -10,19 +10,19 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.City;
-import com.bkweb.modules.position.service.PositionService;
+import com.bkweb.modules.position.service.CPositionService;
 import com.bkweb.modules.tourism.entity.StartPlace;
-import com.bkweb.modules.tourism.service.StartPlaceService;
+import com.bkweb.modules.tourism.service.CStartPlaceService;
 
 @Controller
 @RequestMapping("${adminPath}/startPlace")
 public class StartPlaceController extends BaseController {
 
 	@Autowired
-	private StartPlaceService startPlaceService;
+	private CStartPlaceService startPlaceService;
 
 	@Autowired
-	private PositionService positionService;
+	private CPositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(StartPlace startPlace, Integer pageNum, Model model) {

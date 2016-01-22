@@ -10,14 +10,14 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.sys.authority.entity.Permissions;
-import com.bkweb.sys.authority.service.PermissionsService;
+import com.bkweb.sys.authority.service.CPermissionsService;
 
 @Controller
 @RequestMapping("${adminPath}/permissions")
 public class PermissionsController extends BaseController {
 
 	@Autowired
-	private PermissionsService perService;
+	private CPermissionsService perService;
 
 	@RequestMapping("list")
 	public String findList(Permissions permissions, Integer pageNum, Model model) {

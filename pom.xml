@@ -462,6 +462,16 @@
 			<scope>${scope.value}</scope>
 		</dependency>
 		<!-- CKFinder end -->
+		
+		<!-- qiniu start -->
+		<dependency>
+		    <groupId>com.qiniu</groupId>
+		    <artifactId>qiniu-java-sdk</artifactId>
+		    <version>[7.0.0, 7.0.99]</version>
+		    <scope>${scope.value}</scope>
+		</dependency>
+		<!-- qiniu end -->
+		
 		<!-- poi office -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>

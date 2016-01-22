@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bkweb.sys.dict.dao.BkDictionaryDao;
+import com.bkweb.sys.dict.dao.CDictionaryDao;
 import com.bkweb.sys.dict.entity.Dictionary;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -26,7 +26,7 @@ public class TestDictionaryDao {
 	private SessionFactory sessionFactory;
 
 	@Autowired
-	private BkDictionaryDao dictionaryDao;
+	private CDictionaryDao dictionaryDao;
 
 	@Before
 	public void before() {

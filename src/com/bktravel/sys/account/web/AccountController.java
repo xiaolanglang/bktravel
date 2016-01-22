@@ -11,7 +11,7 @@ import com.bkweb.common.utils.Encodes;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.sys.account.entity.Account;
-import com.bkweb.sys.account.service.AccountService;
+import com.bkweb.sys.account.service.CAccountService;
 import com.bkweb.sys.user.entity.User;
 import com.bkweb.sys.user.service.UserService;
 
@@ -26,7 +26,7 @@ import com.bkweb.sys.user.service.UserService;
 public class AccountController extends BaseController {
 
 	@Autowired
-	private AccountService accountService;
+	private CAccountService accountService;
 
 	@Autowired
 	private UserService userService;

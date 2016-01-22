@@ -10,14 +10,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bktravel.common.web.BaseController;
 import com.bkweb.common.util.AccountUtils;
 import com.bkweb.sys.account.entity.Account;
-import com.bkweb.sys.account.service.AccountService;
+import com.bkweb.sys.account.service.CAccountService;
 import com.bkweb.sys.security.SystemAuthorizingRealm.Principal;
 
 @Controller
 @RequestMapping("")
 public class LoginController extends BaseController {
 	@Autowired
-	private AccountService accountService;
+	private CAccountService accountService;
 
 	@RequestMapping("")
 	public String index(HttpSession session) {

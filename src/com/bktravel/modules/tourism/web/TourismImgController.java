@@ -14,13 +14,13 @@ import com.bkweb.common.utils.FileUtils;
 import com.bkweb.common.web.Result;
 import com.bkweb.modules.tourism.entity.Tourism;
 import com.bkweb.modules.tourism.entity.TourismImg;
-import com.bkweb.modules.tourism.service.TourismImgService;
+import com.bkweb.modules.tourism.service.CTourismImgService;
 
 @Controller
 @RequestMapping("${adminPath}/tourismImg")
 public class TourismImgController extends BaseController {
 	@Autowired
-	private TourismImgService tourismImgService;
+	private CTourismImgService tourismImgService;
 
 	@RequestMapping("list")
 	@ResponseBody

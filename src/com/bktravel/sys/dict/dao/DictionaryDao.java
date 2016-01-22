@@ -9,7 +9,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.bkweb.sys.dict.entity.Dictionary;
 
-public class DictionaryDao extends com.bkweb.sys.dict.dao.BkDictionaryDao {
+public class DictionaryDao extends com.bkweb.sys.dict.dao.CDictionaryDao {
 
 	public int getMaxType(Dictionary dictionary) {
 		ProjectionList projectionList = Projections.projectionList();

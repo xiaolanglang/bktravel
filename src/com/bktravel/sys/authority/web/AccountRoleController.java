@@ -12,17 +12,17 @@ import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.sys.account.entity.Account;
 import com.bkweb.sys.authority.entity.AccountRole;
 import com.bkweb.sys.authority.entity.Role;
-import com.bkweb.sys.authority.service.AccountRoleService;
-import com.bkweb.sys.authority.service.RoleService;
+import com.bkweb.sys.authority.service.CAccountRoleService;
+import com.bkweb.sys.authority.service.CRoleService;
 
 @Controller
 @RequestMapping("${adminPath}/accountrole")
 public class AccountRoleController extends BaseController {
 	@Autowired
-	private AccountRoleService actRoleService;
+	private CAccountRoleService actRoleService;
 
 	@Autowired
-	private RoleService roleService;
+	private CRoleService roleService;
 
 	@RequestMapping("list/{accountId}")
 	public String findList(@PathVariable String accountId, AccountRole accountRole, Integer pageNum, Model model) {

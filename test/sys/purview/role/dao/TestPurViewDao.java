@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
 import com.bkweb.sys.account.entity.Account;
-import com.bkweb.sys.authority.dao.RoleDao;
+import com.bkweb.sys.authority.dao.CRoleDao;
 import com.bkweb.sys.authority.entity.Role;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,7 +22,7 @@ import com.bkweb.sys.authority.entity.Role;
 public class TestPurViewDao {
 
 	@Autowired
-	private RoleDao roleDao;
+	private CRoleDao roleDao;
 
 	@Before
 	public void before() {

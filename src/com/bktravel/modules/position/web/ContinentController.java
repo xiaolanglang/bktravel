@@ -11,13 +11,13 @@ import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.Continent;
-import com.bkweb.modules.position.service.ContinentService;
+import com.bkweb.modules.position.service.CContinentService;
 
 @Controller
 @RequestMapping("${adminPath}/continent")
 public class ContinentController extends BaseController {
 	@Autowired
-	private ContinentService continentService;
+	private CContinentService continentService;
 
 	@RequestMapping("list")
 	public String findList(Continent continent, Integer pageNum, Model model) {

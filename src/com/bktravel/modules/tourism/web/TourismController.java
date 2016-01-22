@@ -11,24 +11,24 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bktravel.common.web.BaseController;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
-import com.bkweb.modules.position.service.PositionService;
+import com.bkweb.modules.position.service.CPositionService;
 import com.bkweb.modules.tourism.entity.StartPlace;
 import com.bkweb.modules.tourism.entity.Tourism;
-import com.bkweb.modules.tourism.service.StartPlaceService;
-import com.bkweb.modules.tourism.service.TourismService;
+import com.bkweb.modules.tourism.service.CStartPlaceService;
+import com.bkweb.modules.tourism.service.CTourismService;
 
 @Controller
 @RequestMapping("${adminPath}/tourism")
 public class TourismController extends BaseController {
 
 	@Autowired
-	private TourismService tourismService;
+	private CTourismService tourismService;
 
 	@Autowired
-	private PositionService positionService;
+	private CPositionService positionService;
 
 	@Autowired
-	private StartPlaceService startPlaceService;
+	private CStartPlaceService startPlaceService;
 
 	@RequestMapping("list")
 	@RequiresPermissions("tourism:list")

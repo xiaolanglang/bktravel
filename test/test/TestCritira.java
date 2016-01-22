@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Log4jConfigurer;
 
-import com.bkweb.modules.position.dao.ProvinceDao;
+import com.bkweb.modules.position.dao.CProvinceDao;
 import com.bkweb.modules.position.entity.Continent;
 import com.bkweb.modules.position.entity.Nation;
 import com.bkweb.modules.position.entity.Province;
@@ -27,7 +27,7 @@ public class TestCritira {
 	private SessionFactory sessionFactory;
 
 	@Autowired
-	private ProvinceDao provinceDao;
+	private CProvinceDao provinceDao;
 
 	@Before
 	public void before() {
