@@ -7,21 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.position.service.PositionService;
+import com.bktravel.modules.position.service.ProvinceService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.Province;
-import com.bkweb.modules.position.service.CPositionService;
-import com.bkweb.modules.position.service.CProvinceService;
 
 @Controller
 @RequestMapping("${adminPath}/province")
 public class ProvinceController extends BaseController {
 
 	@Autowired
-	private CProvinceService provinceService;
+	private ProvinceService provinceService;
 
 	@Autowired
-	private CPositionService positionService;
+	private PositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(Province province, Integer pageNum, Model model) {

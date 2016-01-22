@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.position.service.CityService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.City;
-import com.bkweb.modules.position.service.CCityService;
 
 @Controller
 @RequestMapping("${adminPath}/city")
 public class CityController extends BaseController {
 
 	@Autowired
-	private CCityService cityService;
+	private CityService cityService;
 
 	@RequestMapping("list")
 	public String findList(City city, Integer pageNum, Model model) {

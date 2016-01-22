@@ -8,21 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.sys.authority.service.AccountRoleService;
+import com.bktravel.sys.authority.service.RoleService;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.sys.account.entity.Account;
 import com.bkweb.sys.authority.entity.AccountRole;
 import com.bkweb.sys.authority.entity.Role;
-import com.bkweb.sys.authority.service.CAccountRoleService;
-import com.bkweb.sys.authority.service.CRoleService;
 
 @Controller
 @RequestMapping("${adminPath}/accountrole")
 public class AccountRoleController extends BaseController {
 	@Autowired
-	private CAccountRoleService actRoleService;
+	private AccountRoleService actRoleService;
 
 	@Autowired
-	private CRoleService roleService;
+	private RoleService roleService;
 
 	@RequestMapping("list/{accountId}")
 	public String findList(@PathVariable String accountId, AccountRole accountRole, Integer pageNum, Model model) {

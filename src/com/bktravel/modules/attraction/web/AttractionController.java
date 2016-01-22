@@ -7,20 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.attraction.service.AttractionService;
+import com.bktravel.modules.position.service.PositionService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.attraction.entity.Attraction;
-import com.bkweb.modules.attraction.service.CAttractionService;
-import com.bkweb.modules.position.service.CPositionService;
 
 @Controller
 @RequestMapping("${adminPath}/attraction")
 public class AttractionController extends BaseController {
 	@Autowired
-	private CAttractionService attractionService;
+	private AttractionService attractionService;
 
 	@Autowired
-	private CPositionService positionService;
+	private PositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(Attraction attraction, Integer pageNum, Model model) {

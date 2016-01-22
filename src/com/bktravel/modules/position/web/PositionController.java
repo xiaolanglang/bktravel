@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.position.service.PositionService;
 import com.bkweb.modules.position.entity.City;
 import com.bkweb.modules.position.entity.Continent;
 import com.bkweb.modules.position.entity.Country;
 import com.bkweb.modules.position.entity.Nation;
 import com.bkweb.modules.position.entity.Province;
-import com.bkweb.modules.position.service.CPositionService;
 
 @Controller
 @RequestMapping("${adminPath}/position")
 public class PositionController extends BaseController {
 
 	@Autowired
-	private CPositionService positionService;
+	private PositionService positionService;
 
 	@RequestMapping("continentSelections")
 	@ResponseBody

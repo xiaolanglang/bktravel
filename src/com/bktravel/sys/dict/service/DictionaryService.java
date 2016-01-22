@@ -2,11 +2,13 @@ package com.bktravel.sys.dict.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.sys.dict.entity.Dictionary;
 
+@Service
 @Transactional
 public class DictionaryService extends com.bkweb.sys.dict.service.CDictionaryService {
 	/**

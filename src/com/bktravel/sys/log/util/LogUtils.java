@@ -7,11 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.method.HandlerMethod;
 
-import com.bktravel.sys.log.dao.LogDao;
 import com.bktravel.sys.log.entity.Log;
 import com.bkweb.common.util.AccountUtils;
 import com.bkweb.common.utils.Exceptions;
-import com.bkweb.common.utils.SpringContextHolder;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.sys.account.entity.Account;
 
@@ -24,8 +22,6 @@ import com.bkweb.sys.account.entity.Account;
 public class LogUtils {
 
 	public static final String CACHE_MENU_NAME_PATH_MAP = "menuNamePathMap";
-
-	private static LogDao logDao = SpringContextHolder.getBean(LogDao.class);
 
 	/**
 	 * 保存日志

@@ -7,21 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.position.service.NationService;
+import com.bktravel.modules.position.service.PositionService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.Continent;
 import com.bkweb.modules.position.entity.Nation;
-import com.bkweb.modules.position.service.CNationService;
-import com.bkweb.modules.position.service.CPositionService;
 
 @Controller
 @RequestMapping("${adminPath}/nation")
 public class NationController extends BaseController {
 	@Autowired
-	private CNationService nationService;
+	private NationService nationService;
 
 	@Autowired
-	private CPositionService positionService;
+	private PositionService positionService;
 
 	@RequestMapping("list")
 	public String findList(Nation nation, Integer pageNum, Model model) {

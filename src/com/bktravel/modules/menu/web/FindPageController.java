@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.menu.service.MenuFindService;
 import com.bkweb.common.utils.FileUtils;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.menu.entity.MenuFind;
-import com.bkweb.modules.menu.service.CMenuFindService;
 
 @Controller
 @RequestMapping("${adminPath}/menu/find")
 public class FindPageController extends BaseController {
 
 	@Autowired
-	private CMenuFindService menuFindService;
+	private MenuFindService menuFindService;
 
 	@RequestMapping("list")
 	public String findList(MenuFind menuFind, Integer pageNum, Model model) {

@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.tourism.service.TourismImgService;
 import com.bkweb.common.utils.FileUtils;
 import com.bkweb.common.web.Result;
 import com.bkweb.modules.tourism.entity.Tourism;
 import com.bkweb.modules.tourism.entity.TourismImg;
-import com.bkweb.modules.tourism.service.CTourismImgService;
 
 @Controller
 @RequestMapping("${adminPath}/tourismImg")
 public class TourismImgController extends BaseController {
 	@Autowired
-	private CTourismImgService tourismImgService;
+	private TourismImgService tourismImgService;
 
 	@RequestMapping("list")
 	@ResponseBody

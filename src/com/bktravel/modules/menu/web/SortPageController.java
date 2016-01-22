@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.menu.service.MenuSortService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.menu.entity.MenuSort;
-import com.bkweb.modules.menu.service.CMenuSortService;
 
 @Controller
 @RequestMapping("${adminPath}/menu/sort")
 public class SortPageController extends BaseController {
 
 	@Autowired
-	private CMenuSortService menuSortService;
+	private MenuSortService menuSortService;
 
 	@RequestMapping("list")
 	public String sortList(Model model) {

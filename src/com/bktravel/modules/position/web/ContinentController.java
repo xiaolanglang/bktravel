@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bktravel.common.web.BaseController;
+import com.bktravel.modules.position.service.ContinentService;
 import com.bkweb.common.utils.StringUtils;
 import com.bkweb.common.utils.hibernatepage.HPage;
 import com.bkweb.modules.position.entity.Continent;
-import com.bkweb.modules.position.service.CContinentService;
 
 @Controller
 @RequestMapping("${adminPath}/continent")
 public class ContinentController extends BaseController {
 	@Autowired
-	private CContinentService continentService;
+	private ContinentService continentService;
 
 	@RequestMapping("list")
 	public String findList(Continent continent, Integer pageNum, Model model) {
