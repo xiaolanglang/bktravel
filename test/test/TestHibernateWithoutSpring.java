@@ -1,7 +1,6 @@
 package test;
 
 import java.io.FileNotFoundException;
-import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -63,7 +62,6 @@ public class TestHibernateWithoutSpring {
 		account.setId("8aba95525059c9a1015059c9a2530000");
 		bkUser.setAccount(account);
 		bkUser.setAge(20);
-		bkUser.setBirthday(new Date());
 		bkUser.setCard("211212121212");
 		bkUser.setName("user");
 		bkUser.setSex("男");

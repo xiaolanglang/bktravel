@@ -1,7 +1,6 @@
 package test;
 
 import java.io.FileNotFoundException;
-import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -84,7 +83,6 @@ public class TestEhCache {
 		session.beginTransaction();
 		User bkUser = new User();
 		bkUser.setAge(20);
-		bkUser.setBirthday(new Date());
 		bkUser.setCard("211212121212");
 		bkUser.setName("user");
 		bkUser.setSex("男");

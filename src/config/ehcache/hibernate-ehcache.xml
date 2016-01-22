@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache name="ehcachedemo">
+	
+	<diskStore path="../temp/bktravel/hibernate/ehcache" />
 
 	<defaultCache
 		maxElementsInMemory="1000"

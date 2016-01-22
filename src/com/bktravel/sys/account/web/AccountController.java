@@ -1,7 +1,5 @@
 package com.bktravel.sys.account.web;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +45,6 @@ public class AccountController extends BaseController {
 		String password = Encodes.getMD5Password(account.getUsername(), account.getPassword());
 		account.setPassword(password);
 		accountService.saveOrUpdate(account);
-		user.setBirthday(new Date());
 		userService.saveOrUpdate(user);
 		addRedirectMessage(attributes, "保存账户成功");
 		return "redirect:" + adminPath + "/account/list";

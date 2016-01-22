@@ -1,7 +1,6 @@
 package test;
 
 import java.io.FileNotFoundException;
-import java.util.Date;
 
 import org.hibernate.SessionFactory;
 import org.junit.Before;
@@ -48,7 +47,6 @@ public class TestCrudDao {
 	public void save() {
 		User bkUser = new User();
 		bkUser.setAge(20);
-		bkUser.setBirthday(new Date());
 		bkUser.setCard("211212121212");
 		bkUser.setName("user");
 		bkUser.setSex("男");
