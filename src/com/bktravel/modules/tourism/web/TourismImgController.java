@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.bktravel.common.utils.QiNiuUtils;
 import com.bktravel.common.web.BaseController;
 import com.bktravel.modules.tourism.service.TourismImgService;
 import com.bkweb.common.utils.FileUtils;
@@ -57,6 +58,8 @@ public class TourismImgController extends BaseController {
 		tourismImg = tourismImgService.get(tourismImg);
 		if (FileUtils.delFile(tourismImg.getLocalUrl())) {
 			tourismImgService.trueDelete(tourismImg);
+			// 七牛删除
+			QiNiuUtils.del(QiNiuUtils.getFileName(tourismImg.getUrl()));
 		}
 		return "redirect:" + adminPath + "/tourismImg/list";
 	}

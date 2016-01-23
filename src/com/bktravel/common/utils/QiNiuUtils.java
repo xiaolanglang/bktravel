@@ -22,11 +22,11 @@ public class QiNiuUtils {
 	private static final String SECRET_KEY = Global.getConfig("qiniu.secret_key");
 	private static final String BUCKET = "itravel";
 
-	private Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
-	private UploadManager uploadManager = new UploadManager();
-	private BucketManager bucketManager = new BucketManager(auth);
+	private static Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
+	private static UploadManager uploadManager = new UploadManager();
+	private static BucketManager bucketManager = new BucketManager(auth);
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	private static Logger logger = LoggerFactory.getLogger(QiNiuUtils.class);
 
 	/**
 	 * 上传图片
@@ -36,15 +36,17 @@ public class QiNiuUtils {
 	 *            文件名称,例如:img/2013/123.png
 	 * @return
 	 */
-	public boolean put(byte[] bs, String fileName) {
+	public static boolean put(byte[] bs, String fileName) {
 		boolean flag = true;
 		try {
 			Response res = uploadManager.put(bs, fileName, getUpToken());
 			logger.info(res.bodyString());
+			logger.info("七牛上传图片" + fileName + "成功");
 		} catch (QiniuException e) {
 			flag = false;
 			try {
 				logger.info(e.response.bodyString());
+				logger.info("七牛上传图片" + fileName + "失败");
 			} catch (QiniuException e1) {
 			}
 		}
@@ -57,15 +59,17 @@ public class QiNiuUtils {
 	 * @param file
 	 * @return
 	 */
-	public boolean put(File file) {
+	public static boolean put(File file, String fileName) {
 		boolean flag = true;
 		try {
-			Response res = uploadManager.put(file, file.getName(), getUpToken());
+			Response res = uploadManager.put(file, fileName, getUpToken());
 			logger.info(res.bodyString());
+			logger.info("七牛上传图片" + fileName + "成功");
 		} catch (QiniuException e) {
 			flag = false;
 			try {
 				logger.info(e.response.bodyString());
+				logger.info("七牛上传图片" + fileName + "失败");
 			} catch (QiniuException e1) {
 			}
 		}
@@ -78,21 +82,23 @@ public class QiNiuUtils {
 	 * @param fileName
 	 * @return
 	 */
-	public boolean del(String fileName) {
+	public static boolean del(String fileName) {
 		boolean flag = true;
 		try {
 			bucketManager.delete(BUCKET, fileName);
+			logger.info("七牛删除图片" + fileName + "成功");
 		} catch (QiniuException e) {
 			flag = false;
 			try {
 				logger.info(e.response.bodyString());
+				logger.info("七牛删除图片" + fileName + "失败");
 			} catch (QiniuException e1) {
 			}
 		}
 		return flag;
 	}
 
-	private String getUpToken() {
+	private static String getUpToken() {
 		return auth
 				.uploadToken(
 						BUCKET,
@@ -101,6 +107,18 @@ public class QiNiuUtils {
 						new StringMap()
 								.putNotEmpty("returnBody",
 										"{\"key\": $(key), \"hash\": $(etag), \"width\": $(imageInfo.width), \"height\": $(imageInfo.height)}"));
+	}
+
+	/**
+	 * 要求请求的路径是：http://m.static.cgotravel.com/img/20160105/E4D5633DE.png
+	 * 
+	 * @param url
+	 * @return 例如：img/20160105/E4D5633DE7BC4CE19C114679E620EB79.png
+	 */
+	public static String getFileName(String url) {
+		String[] content = url.split("/");
+		String filename = content[3] + "/" + content[4] + "/" + content[5];
+		return filename;
 	}
 
 	// private class MyRet {

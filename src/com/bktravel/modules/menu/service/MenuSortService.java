@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bktravel.common.utils.QiNiuUtils;
 import com.bkweb.common.utils.FileUploadUtils;
 import com.bkweb.common.utils.FileUtils;
 import com.bkweb.common.utils.IdUtils;
@@ -30,20 +31,26 @@ public class MenuSortService extends CMenuSortService {
 		if (file != null) {
 			if (!ImageUtils.checkImage(file, 600, 400)) {
 				FileUtils.deleteFile(file.getAbsolutePath());
-				// TODO 删除
 				return false;
 			}
 			if (!StringUtils.isEmpty(menusort.getId())) {
-				String url = dao.get(menusort).getImageLocal();
+				MenuSort menuSort2 = dao.get(menusort);
+				String localUrl = menuSort2.getImageLocal();
+				String url = menuSort2.getImageUrl();
+				if (!StringUtils.isEmpty(localUrl)) {
+					FileUtils.deleteFile(localUrl);
+				}
+				// 七牛删除文件
 				if (!StringUtils.isEmpty(url)) {
-					FileUtils.deleteFile(url);
+					QiNiuUtils.del(QiNiuUtils.getFileName(url));
 				}
 			}
 			menusort.setImageUrl(FileUploadUtils.getDefaultImgUrl(request, file.getName()));
 			menusort.setImageLocal(file.getAbsolutePath());
+			// 七牛上传文件
+			QiNiuUtils.put(file, QiNiuUtils.getFileName(menusort.getImageUrl()));
 		}
 		dao.saveOrUpdate(menusort);
-		// TODO 上传
 		return true;
 	}
 

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bktravel.common.utils.QiNiuUtils;
 import com.bkweb.common.utils.FileUploadUtils;
 import com.bkweb.common.utils.FileUtils;
 import com.bkweb.common.utils.IdUtils;
@@ -50,10 +51,10 @@ public class TourismImgService extends CTourismImgService {
 			saveOrUpdate(tourismImg);
 			result.setCode("200");
 			result.setMessage("上传图片成功");
-			// TODO 上传
+			// 七牛上传
+			QiNiuUtils.put(file, QiNiuUtils.getFileName(tourismImg.getUrl()));
 		} else {
 			FileUtils.deleteFile(file.getAbsolutePath());
-			// TODO 删除
 		}
 
 	}
